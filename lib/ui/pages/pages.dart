@@ -1,0 +1,9 @@
+export '../pages/setting_pages/profile.dart';
+export 'gloabal_pages/notification.dart';
+export 'setting_pages/premium.dart';
+export 'setting_pages/integration.dart';
+export 'setting_pages/default_list.dart';
+export 'setting_pages/support.dart';
+export 'setting_pages/community.dart';
+export 'package:todo_reminder/ui/pages/calendar_pages/agenda.dart';
+export 'gloabal_pages/tags.dart';
