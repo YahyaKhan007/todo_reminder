@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/ui/data/data.dart';
 import 'package:todo_reminder/ui/screens/screens.dart';
@@ -24,21 +25,21 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
           child: Consumer<CalendarProvider>(builder: (context, value, child) {
             return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 50,
+                  SizedBox(
+                    height: 50.h,
                   ),
-                  const Text(
+                  Text(
                     "CALENDAR VIEW",
-                    style: TextStyle(letterSpacing: 0.3, fontSize: 13),
+                    style: TextStyle(letterSpacing: 0.3, fontSize: 13.sp),
                   ),
-                  const SizedBox(
-                    height: 15,
+                  SizedBox(
+                    height: 15.h,
                   ),
                   InkWell(
                     onTap: () {
@@ -79,11 +80,11 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
                     child: _items(context, Icons.view_week_outlined, "Week",
                         Colors.black, null),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 20, bottom: 25),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.h, bottom: 25.h),
                     child: Text(
                       "VISIBLE CALENDARS",
-                      style: TextStyle(letterSpacing: 0.3, fontSize: 14),
+                      style: TextStyle(letterSpacing: 0.3, fontSize: 14.sp),
                     ),
                   ),
                   Expanded(
@@ -98,7 +99,7 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
                                   DrawerData.icons[index],
                                   DrawerData.visibleCal[index],
                                   DrawerData.colors[index],
-                                  25),
+                                  25.sp),
                             );
                           }))
                 ]);
@@ -114,7 +115,7 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
     double? size,
   ) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15),
+      padding: EdgeInsets.symmetric(vertical: 15.h),
       child: InkWell(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -123,15 +124,15 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
             Icon(
               icon,
               color: color ?? Colors.black,
-              size: size ?? 25,
+              size: size ?? 24.w,
             ),
-            const SizedBox(
-              width: 20,
+            SizedBox(
+              width: 20.w,
             ),
             Expanded(
               child: Text(
                 text,
-                style: const TextStyle(color: Colors.black, fontSize: 13),
+                style: TextStyle(color: Colors.black, fontSize: 13.sp),
               ),
             )
           ],

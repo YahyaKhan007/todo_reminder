@@ -87,7 +87,7 @@ class SupportOption extends StatelessWidget {
                 radius: 12.r,
                 child: Icon(
                   icon,
-                  size: 15.h,
+                  size: 15.sp,
                   color: Colors.white,
                 ),
               )
@@ -95,7 +95,7 @@ class SupportOption extends StatelessWidget {
               Icon(
                 icon,
                 color: Colors.blue,
-                size: 25.h,
+                size: 25.sp,
               ),
             SizedBox(
               height: 10.h,
@@ -116,9 +116,10 @@ class SupportOption extends StatelessWidget {
                           color: Colors.grey.shade700,
                           fontSize: 20.sp,
                           letterSpacing: 0.5)),
-                  const Icon(
+                  Icon(
                     CupertinoIcons.heart_fill,
                     color: Colors.blue,
+                    size: 25.sp,
                   ),
                   Text("ANY.DO",
                       style: TextStyle(

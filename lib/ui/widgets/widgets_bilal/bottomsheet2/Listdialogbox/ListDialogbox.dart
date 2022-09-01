@@ -30,12 +30,12 @@ class CustomListDialogbox extends StatelessWidget {
           ListBox(iconclr: Colors.blue, txt81: "Personal", txtsize: 15.sp),
           Divider(
             color: Colors.grey.shade100,
-            thickness: 2,
+            thickness: 2.h,
           ),
           ListBox(iconclr: Colors.white, txt81: "Work", txtsize: 15.sp),
           Divider(
             color: Colors.grey.shade100,
-            thickness: 2,
+            thickness: 2.h,
           ),
           ListBox(iconclr: Colors.white, txt81: "Demo", txtsize: 15.sp),
         ],

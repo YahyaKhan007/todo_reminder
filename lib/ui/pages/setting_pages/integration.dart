@@ -16,9 +16,10 @@ class Integration extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_back,
                 color: Colors.blue,
+                size: 25.sp,
               )),
           title: Text(
             "INTEGRATION",
@@ -75,7 +76,7 @@ class Option extends StatelessWidget {
     return InkWell(
       onTap: ontap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 15.w),
         height: 40.h,
         // decoration: BoxDecoration(
         //     border: Border(bottom: BorderSide(color: Colors.grey.shade300))),

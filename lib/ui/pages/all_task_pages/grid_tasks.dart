@@ -41,10 +41,14 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
                       borderRadius: BorderRadius.circular(30.r),
                       color: const Color.fromARGB(31, 167, 161, 161),
                     ),
-                    child: const TextField(
+                    child: TextField(
                       decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.search),
+                          prefixIcon: Icon(
+                            Icons.search,
+                            size: 15.w,
+                          ),
                           labelText: "Search for tasks, events, etc...",
+                          labelStyle: TextStyle(fontSize: 14.sp),
                           border: InputBorder.none),
                     ),
                   ),
@@ -88,7 +92,7 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
                       Text(
                         "My Lists",
                         style: TextStyle(
-                            fontSize: size.width * 0.050,
+                            fontSize: 17.h,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
                       ),
@@ -112,29 +116,6 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
 
 class GridViewTask extends StatelessWidget {
   GridViewTask({Key? key}) : super(key: key);
-  List name = [];
-  List list = [
-    Container(
-      height: 30,
-      width: 30,
-      color: Colors.red,
-    ),
-    Container(
-      height: 30,
-      width: 30,
-      color: Colors.green,
-    ),
-    Container(
-      height: 30,
-      width: 30,
-      color: Colors.yellow,
-    ),
-    Container(
-      height: 30,
-      width: 30,
-      color: Colors.purple,
-    )
-  ];
 
   List<String> title = ["Person", "Work", "Grocery List"];
 
@@ -153,7 +134,7 @@ class GridViewTask extends StatelessWidget {
           itemCount: title.length + 1,
           itemBuilder: (BuildContext context, index) {
             return index != title.length
-                ? Stack(children: [
+                ? Stack(alignment: Alignment.topRight, children: [
                     TaskContainer(
                       txt: title[index],
                       ontap: () {
@@ -167,10 +148,10 @@ class GridViewTask extends StatelessWidget {
                       color: Colors.black,
                     ),
                     Positioned(
-                        top: size.height * 0.01,
-                        left: size.width - 260,
+                        top: 5.h,
+                        right: 10.w,
                         child: CircleAvatar(
-                          radius: 10,
+                          radius: 10.r,
                           backgroundColor: Colors.grey.shade200,
                           child: FittedBox(
                             child: Text(
@@ -208,9 +189,9 @@ class GridViewTask extends StatelessWidget {
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-        top: Radius.circular(10.0),
+        top: Radius.circular(10.0.h),
       )),
       builder: (context) {
         return Stack(
@@ -236,49 +217,48 @@ class GridViewTask extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      SizedBox(
-                        // color: Colors.red,
-                        width: 110.w,
-                        height: 40.h,
+                      Expanded(
                         child: Center(
                           child: Text(
                             ("Grocery List"),
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                fontSize: 25.sp,
+                                fontSize: 22.sp,
                                 color: Colors.black),
                           ),
                         ),
                       ),
                       PopupMenuButton(
+                        iconSize: 15.sp,
                         itemBuilder: (context) => [
                           PopupMenuItem(
                             value: 1,
                             child: Popmenu(txt: "Rename"),
                           ),
                           PopupMenuItem(
-                            value: 1,
+                            value: 2,
                             child: Popmenu(txt: "Start from scratch"),
                           ),
                           PopupMenuItem(
-                            value: 1,
+                            value: 3,
                             child: Popmenu(txt: "Convert to regular list"),
                           ),
                           PopupMenuItem(
-                            value: 1,
+                            value: 4,
                             child: Popmenu(txt: "Export list"),
                           ),
                           PopupMenuItem(
-                            value: 1,
+                            value: 5,
                             child: Popmenu(txt: "Print list"),
                           ),
                           PopupMenuItem(
-                            value: 1,
+                            value: 6,
                             child: Popmenu(txt: "Delete list"),
                           ),
                         ],
-                        child: const Icon(
+                        child: Icon(
                           Icons.more_vert,
+                          size: 25.sp,
                         ),
                       ),
                     ],
@@ -372,8 +352,8 @@ class GridViewTask extends StatelessWidget {
                                         fontWeight: FontWeight.normal,
                                         fontSize: 15.sp),
                                   ),
-                                  const SizedBox(
-                                    width: 10,
+                                  SizedBox(
+                                    width: 10.w,
                                   ),
                                   Consumer<AddGrocerryProvider>(
                                     builder: (context, value, child) {

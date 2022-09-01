@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class assets extends StatelessWidget {
   assets({Key? key, required this.text, required this.icn}) : super(key: key);
@@ -12,17 +13,17 @@ class assets extends StatelessWidget {
         children: [
           Icon(
             icn,
-            size: 18,
+            size: 18.sp,
             color: Colors.blue,
           ),
           SizedBox(
-            width: 10,
+            width: 10.w,
           ),
           Text(
             text,
             style: TextStyle(
               color: Colors.grey.shade400,
-              fontSize: 18,
+              fontSize: 18.sp,
             ),
           )
         ],

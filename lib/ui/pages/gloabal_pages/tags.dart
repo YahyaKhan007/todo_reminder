@@ -77,7 +77,7 @@ class _TagsState extends State<Tags> {
             icon: Icon(
               Icons.arrow_back,
               color: Colors.blue,
-              size: 20.h,
+              size: 20.sp,
             )),
         title: Text(
           "TAGS",
@@ -233,14 +233,14 @@ class _TagOptionState extends State<TagOption> {
         leading: widget.custom_switch,
         title: Text(
           widget.txt,
-          style: TextStyle(color: Colors.white, fontSize: 15.sp),
+          style: TextStyle(color: Colors.white, fontSize: 14.sp),
         ),
         trailing: IconButton(
             onPressed: widget.ontap,
             icon: Icon(
               CupertinoIcons.eyedropper,
               color: Colors.white,
-              size: 20.h,
+              size: 20.sp,
             )),
       ),
     );

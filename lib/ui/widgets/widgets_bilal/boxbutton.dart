@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'bottomsheet2/text.dart';
 
@@ -12,7 +13,7 @@ class boxbutton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 25,
+      height: 25.h,
       decoration: BoxDecoration(
           border: Border(
         right: BorderSide(color: Colors.grey.shade400),
@@ -23,11 +24,12 @@ class boxbutton extends StatelessWidget {
           Icon(
             icn,
             color: clr,
+            size: 22.h,
           ),
           SizedBox(
-            width: 8,
+            width: 8.w,
           ),
-          text(txt: txt41, size: 18, clr: clr, fw: FontWeight.w500),
+          text(txt: txt41, size: 18.sp, clr: clr, fw: FontWeight.w500),
         ],
       ),
     );

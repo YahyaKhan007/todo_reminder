@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'text.dart';
 
@@ -22,7 +23,7 @@ class box3 extends StatelessWidget {
         child: Center(
             child: text(
                 txt: txt41,
-                size: size.width * 0.0381,
+                size: 13.sp,
                 clr: Colors.grey,
                 fw: FontWeight.bold)),
       ),

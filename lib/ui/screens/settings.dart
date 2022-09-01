@@ -21,13 +21,13 @@ class _SettingsState extends State<Settings> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
-          title: const Text(
+          title: Text(
             "Settings",
             style: TextStyle(
                 letterSpacing: 0.5,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 18),
+                fontSize: 18.sp),
           )),
       body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
@@ -404,7 +404,7 @@ class Options extends StatelessWidget {
                     child: Icon(
                       icon![0],
                       color: Colors.white,
-                      size: 15.h,
+                      size: 15.w,
                     ),
                   ),
                   SizedBox(
@@ -437,7 +437,7 @@ class Options extends StatelessWidget {
                             backgroundColor: _color[index],
                             child: Icon(
                               icon![index],
-                              size: 15.h,
+                              size: 15.w,
                               color: _iconColor[index],
                             ),
                           ),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/edit_task_bottom_sheet.dart';
 
 import 'alltasksText.dart';
@@ -20,8 +21,9 @@ class _CostomExpTileState extends State<CostomExpTile> {
     Size size = MediaQuery.of(context).size;
 
     return ExpansionTile(
-      trailing: const Icon(
+      trailing: Icon(
         Icons.add,
+        size: 17.h,
         color: Colors.blue,
       ),
       title: AllTasksText(text: widget.txt21),
@@ -36,7 +38,7 @@ class _CostomExpTileState extends State<CostomExpTile> {
                   child: Container(
                     color: Colors.grey.shade400,
                     width: size.width - 100,
-                    height: 1,
+                    height: 1.h,
                   )),
             ),
             Row(children: [
@@ -56,7 +58,7 @@ class _CostomExpTileState extends State<CostomExpTile> {
                 child: Text(
                   widget.txt2,
                   style: TextStyle(
-                    fontSize: size.width * 0.04,
+                    fontSize: 16.sp,
                     color: Colors.grey.shade400,
                     fontWeight: FontWeight.w500,
                   ),

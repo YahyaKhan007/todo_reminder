@@ -51,7 +51,7 @@ class Pageview3 extends StatelessWidget {
             child: Center(
                 child: text(
                     txt: "Upgrade To Premium",
-                    size: 14.h,
+                    size: 14.sp,
                     clr: Colors.white,
                     fw: FontWeight.bold)),
           ),

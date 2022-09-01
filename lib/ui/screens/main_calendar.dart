@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/provider/calendar_provider.dart';
 import 'package:todo_reminder/ui/pratice_screens/day.dart';
@@ -25,12 +26,11 @@ class _MainCalendarState extends State<MainCalendar> {
 
   @override
   Widget build(BuildContext context) {
-    // final provider = Provider.of<CalendarProvider>(context, listen: false);
     return Scaffold(
       key: calScafoldKey,
       drawer: const CalendarDrawer(),
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(53),
+          preferredSize: Size.fromHeight(53.h),
           child: Consumer<CalendarProvider>(
             builder: (context, value, child) {
               return CalendarAppBar(
@@ -49,7 +49,7 @@ class _MainCalendarState extends State<MainCalendar> {
           ontap: () {
             EventOrTaskAdder.showButtons(context);
           },
-          radius: 25),
+          radius: 25.r),
     );
   }
 }

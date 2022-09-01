@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../screen_size.dart';
 import '../text.dart';
 import 'BottomButton.dart';
 import 'circlebutton.dart';
@@ -11,12 +10,10 @@ class CustomPageview1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return SizedBox(
       //color: Colors.red,
       // width: size.width,
-      height: 165.h,
+      // height: 165.h,
       child: Column(
         children: [
           Padding(

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/switchbutton.dart';
 
-import '../../screen_size.dart';
 import 'bottomsheet2/Attachmentbottomsheet/AttachmntSheet.dart';
 import 'bottomsheet2/Box3.dart';
 import 'bottomsheet2/Listdialogbox/ListDialogbox.dart';
@@ -61,12 +60,12 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                       decoration: BoxDecoration(
                           //color: Colors.red,
                           border: Border(
-                        bottom: BorderSide(color: Colors.blue, width: 3.w),
+                        bottom: BorderSide(color: Colors.blue, width: 3.h),
                       )),
                       child: Center(
                           child: text(
                               txt: "TASK DETAILS",
-                              size: size.width * 0.027,
+                              size: 13.sp,
                               clr: Colors.black,
                               fw: FontWeight.w500)),
                     ),
@@ -76,7 +75,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                       },
                       child: text(
                           txt: "Save",
-                          size: size.width * 0.0409,
+                          size: 14.sp,
                           clr: Colors.blue,
                           fw: FontWeight.bold),
                     )
@@ -99,7 +98,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                         ),
                         text(
                             txt: "#Email",
-                            size: size.width * 0.07338,
+                            size: 20.sp,
                             clr: Colors.black,
                             fw: FontWeight.bold),
                         SizedBox(
@@ -113,7 +112,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                           children: [
                             text(
                                 txt: "REMIND ME ABOUT THIS",
-                                size: size.width * 0.0305,
+                                size: 11.sp,
                                 clr: Colors.black,
                                 fw: FontWeight.normal),
                             const Spacer(),
@@ -127,7 +126,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                                 },
                                 child: text(
                                     txt: "REMOVE",
-                                    size: size.width * 0.0305,
+                                    size: 11.sp,
                                     clr: Colors.black,
                                     fw: FontWeight.normal),
                               ),
@@ -186,7 +185,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                                       children: [
                                         text(
                                             txt: "Tomorrow at 09:00 AM",
-                                            size: 15.h,
+                                            size: 15.sp,
                                             clr: Colors.blue,
                                             fw: FontWeight.w500),
                                         const CustomSwitch(),
@@ -202,7 +201,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
 
                         text(
                             txt: "LIST",
-                            size: size.width * 0.0331,
+                            size: 13.sp,
                             clr: Colors.black,
                             fw: FontWeight.normal),
                         SizedBox(
@@ -241,6 +240,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                                   Icon(
                                     Icons.arrow_drop_down,
                                     color: Colors.grey.shade500,
+                                    size: 20.h,
                                   ),
                                 ]),
                           ),
@@ -250,7 +250,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                         ),
                         text(
                             txt: "SUBTASKS",
-                            size: size.width * 0.0381,
+                            size: 13.sp,
                             clr: Colors.black,
                             fw: FontWeight.normal),
                         SizedBox(
@@ -263,6 +263,8 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                               border: Border.all(color: Colors.grey.shade300),
                               borderRadius: BorderRadius.circular(3)),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Padding(
                                 padding: EdgeInsets.symmetric(
@@ -270,6 +272,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                                 child: Icon(
                                   Icons.circle,
                                   color: Colors.grey.shade300,
+                                  size: 20.h,
                                 ),
                               ),
                               Expanded(
@@ -291,7 +294,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                         ),
                         text(
                             txt: "NOTES",
-                            size: size.width * 0.0381,
+                            size: 13.sp,
                             clr: Colors.black,
                             fw: FontWeight.normal),
                         SizedBox(
@@ -407,7 +410,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                         ),
                         text(
                             txt: "ATTACHMENTD",
-                            size: size.width * 0.0331,
+                            size: 13.sp,
                             clr: Colors.black,
                             fw: FontWeight.normal),
                         SizedBox(
@@ -437,7 +440,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                         ),
                         text(
                             txt: "CREATED",
-                            size: size.width * 0.0331,
+                            size: 13.sp,
                             clr: Colors.black,
                             fw: FontWeight.normal),
                         SizedBox(
@@ -445,7 +448,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                         ),
                         text(
                             txt: "16 Aug 2022",
-                            size: size.width * 0.0381,
+                            size: 13.sp,
                             clr: Colors.black,
                             fw: FontWeight.bold),
                         SizedBox(
@@ -453,7 +456,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                         ),
                         Container(
                           width: size.width,
-                          height: size.height * 0.0526,
+                          height: 30.h,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(4),
                             border: Border.all(color: Colors.red),
@@ -461,7 +464,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                           child: Center(
                             child: text(
                                 txt: "Delete task",
-                                size: size.width * 0.0381,
+                                size: 13.sp,
                                 clr: Colors.red,
                                 fw: FontWeight.w500),
                           ),
@@ -471,7 +474,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
               ),
             ),
             SizedBox(
-              height: size.height * 0.0263,
+              height: size.height * 0.0463,
             ),
             Container(
               height: size.height * 0.0526,

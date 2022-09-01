@@ -12,8 +12,8 @@ class CustomCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.h,
-      width: 80.w,
+      height: 70.h,
+      width: 70.w,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
           border: Border.all(color: Colors.black87, width: 2),
@@ -24,7 +24,7 @@ class CustomCircle extends StatelessWidget {
         children: [
           Icon(
             icn,
-            size: 25.h,
+            size: 20.w,
             color: Colors.black87,
           ),
           text(

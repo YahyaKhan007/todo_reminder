@@ -18,8 +18,9 @@ class Community extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.arrow_back,
+                size: 25.sp,
                 color: Colors.blue,
               )),
           title: Text(

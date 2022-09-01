@@ -29,19 +29,21 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
       elevation: 0,
       actions: [
         ActionButton1(
-            color: Colors.grey,
-            ontap: () {
-              Navigator.of(context)
-                  .push(CustomePageRoute(child: const NotificationPage()));
-            },
-            icon: Icons.check_box_outlined),
-        const SizedBox(
-          width: 5,
+          color: Colors.grey,
+          ontap: () {
+            Navigator.of(context)
+                .push(CustomePageRoute(child: const NotificationPage()));
+          },
+          icon: Icons.check_box_outlined,
+        ),
+        SizedBox(
+          width: 5.w,
         ),
         PopupMenuButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.more_horiz,
             color: Colors.grey,
+            size: 22.w,
           ),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5)
@@ -151,12 +153,10 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
               return IconButton(
                 icon: Icon(
                   Icons.fitbit_rounded,
-                  size: 25.h,
+                  size: 25.w,
                   color: Colors.grey.shade600,
                 ),
                 onPressed: () {
-                  print(size.height);
-                  print(size.width);
                   value.setTaskBool(true);
                 },
               );

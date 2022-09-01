@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../text.dart';
 
@@ -11,23 +12,28 @@ class Attachmntbox extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: 45,
+      height: 45.h,
       width: size.width,
       decoration: BoxDecoration(
           border: Border(
-              bottom: BorderSide(color: Colors.grey.shade100, width: 2))),
+              bottom: BorderSide(color: Colors.grey.shade100, width: 2.w))),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Row(
           children: [
             Icon(
               iccon,
               color: Colors.grey.shade300,
+              size: 22.h,
             ),
-            const SizedBox(
-              width: 15,
+            SizedBox(
+              width: 15.w,
             ),
-            text(txt: txt91, size: 16, clr: Colors.black54, fw: FontWeight.w500)
+            text(
+                txt: txt91,
+                size: 16.sp,
+                clr: Colors.black54,
+                fw: FontWeight.w500)
           ],
         ),
       ),

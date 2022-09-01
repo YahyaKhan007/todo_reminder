@@ -1,8 +1,8 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:table_calendar/table_calendar.dart';
-
 
 class Agenda extends StatefulWidget {
   Agenda({Key? key}) : super(key: key);
@@ -37,7 +37,7 @@ class _AgendaState extends State<Agenda> {
                 showTableCalendar
                     ? Icons.keyboard_arrow_up
                     : Icons.keyboard_arrow_down,
-                size: 17,
+                size: 17.sp,
               ),
             ),
             Visibility(

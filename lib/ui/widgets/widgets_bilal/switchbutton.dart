@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 class CustomSwitch extends StatefulWidget {
@@ -25,12 +26,12 @@ class _CustomSwitchState extends State<CustomSwitch> {
       inactiveText: "",
       activeText: "",
       inactiveColor: Colors.grey.shade300,
-      width: 55.0,
-      height: 28.0,
-      toggleSize: 28.0,
+      width: 55.0.w,
+      height: 28.0.h,
+      toggleSize: 28.0.h,
       value: status,
-      borderRadius: 30.0,
-      padding: 1.0,
+      borderRadius: 30.0.h,
+      padding: 1.0.w,
       showOnOff: true,
       onToggle: (val) {
         setState(() {

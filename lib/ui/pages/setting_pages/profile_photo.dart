@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/widgets.dart';
 
 class BigProfile extends StatelessWidget {
@@ -13,10 +14,13 @@ class BigProfile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 20.h,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: ActionFloatingButton(
-                radius: 15,
+                radius: 15.r,
                 ontap: () {
                   Navigator.of(context).pop();
                 },

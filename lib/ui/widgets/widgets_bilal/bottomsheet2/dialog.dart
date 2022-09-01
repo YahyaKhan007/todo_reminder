@@ -61,7 +61,7 @@ class _CustomDailogBoxState extends State<CustomDailogBox> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: Container(
-                height: 35.h,
+                height: 32.h,
                 // width: size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),

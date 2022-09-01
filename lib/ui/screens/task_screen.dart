@@ -26,8 +26,6 @@ class _TaskScreensState extends State<TaskScreens> {
   List taskPages = const [AllTasks(), Next7Days(), Personal()];
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return Scaffold(
         bottomSheet: const BottomContainer(),
         appBar: PreferredSize(

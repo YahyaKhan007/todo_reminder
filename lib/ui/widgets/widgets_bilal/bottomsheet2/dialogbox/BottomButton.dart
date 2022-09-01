@@ -37,7 +37,7 @@ class BottomButton extends StatelessWidget {
               child: Center(
                 child: text(
                     txt: txt71,
-                    size: 16.h,
+                    size: 15.sp,
                     clr: Colors.black,
                     fw: FontWeight.w700),
               ),
@@ -47,7 +47,7 @@ class BottomButton extends StatelessWidget {
             flex: 1,
             child: Center(
               child: text(
-                  txt: txt72, size: 16.h, clr: txtclr, fw: FontWeight.w700),
+                  txt: txt72, size: 15.sp, clr: txtclr, fw: FontWeight.w700),
             ),
           )
         ],

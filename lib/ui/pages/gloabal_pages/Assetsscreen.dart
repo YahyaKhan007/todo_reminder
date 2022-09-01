@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/assetswidget.dart';
 
 class AssetScreen extends StatefulWidget {
@@ -16,9 +17,9 @@ class _AssetScreenState extends State<AssetScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        elevation: 3,
+        elevation: 4,
         bottomOpacity: 80,
-        shadowColor: Colors.grey.shade300,
+        shadowColor: Colors.grey.shade100,
         backgroundColor: Colors.white,
         leading: InkWell(
           onTap: () {
@@ -26,31 +27,31 @@ class _AssetScreenState extends State<AssetScreen> {
           },
           child: Icon(
             Icons.close,
-            color: Colors.grey.shade300,
-            size: 25,
+            color: Colors.grey.shade400,
+            size: 22.sp,
           ),
         ),
-        title: const TextField(
+        title: TextField(
           decoration: InputDecoration(
             hintText: "  I want to...",
-            hintStyle: TextStyle(color: Colors.grey),
+            hintStyle: TextStyle(color: Colors.grey, fontSize: 15.sp),
             border: InputBorder.none,
           ),
           cursorColor: Colors.grey,
         ),
-        actions: const [
+        actions: [
           Icon(
             Icons.mic_none_sharp,
-            size: 25,
+            size: 22.sp,
             color: Colors.blue,
           ),
           SizedBox(
-            width: 10,
+            width: 10.w,
           )
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: EdgeInsets.all(15.0.sp),
         child: SingleChildScrollView(
           child: Column(
             children: [

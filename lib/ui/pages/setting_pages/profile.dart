@@ -152,7 +152,7 @@ class _ProfileState extends State<Profile> {
                             },
                             child: Icon(
                               Icons.edit,
-                              size: 20.h,
+                              size: 20.sp,
                               color: Colors.grey,
                             ),
                           )
@@ -190,7 +190,7 @@ class _ProfileState extends State<Profile> {
                             },
                             child: Icon(
                               Icons.edit,
-                              size: 20.h,
+                              size: 20.sp,
                               color: Colors.grey,
                             ),
                           )
@@ -198,11 +198,12 @@ class _ProfileState extends State<Profile> {
                       ),
                       InkWell(
                           onTap: () {},
-                          child: const Padding(
-                            padding: EdgeInsets.only(top: 0),
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 5.h),
                             child: Text(
                               "Free Account",
-                              style: TextStyle(color: Colors.blue),
+                              style: TextStyle(
+                                  color: Colors.blue, fontSize: 14.sp),
                             ),
                           ))
                     ],

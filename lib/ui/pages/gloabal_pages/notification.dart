@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/data/anydo_tip.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -18,8 +19,8 @@ class _NotificationPageState extends State<NotificationPage> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(
-              top: 30,
+            padding: EdgeInsets.only(
+              top: 30.h,
             ),
             child: Row(
               children: [
@@ -27,8 +28,9 @@ class _NotificationPageState extends State<NotificationPage> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.arrow_back,
+                      size: 25.sp,
                       color: Colors.blue,
                     )),
                 Column(
@@ -43,24 +45,24 @@ class _NotificationPageState extends State<NotificationPage> {
                             },
                             child: Text("ANY.DO TIPS",
                                 style: TextStyle(
-                                    fontSize: 13,
+                                    fontSize: 13.sp,
                                     color: notify
                                         ? Colors.grey.shade400
                                         : Colors.grey.shade800))),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: 5.h,
                         ),
                         Container(
-                          height: 3,
-                          width: 80,
+                          height: 3.h,
+                          width: 80.w,
                           color: notify ? Colors.grey.shade300 : Colors.blue,
                         )
                       ],
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 15,
+                SizedBox(
+                  width: 15.w,
                 ),
                 Column(
                   children: [
@@ -74,17 +76,17 @@ class _NotificationPageState extends State<NotificationPage> {
                             },
                             child: Text("NOTIFICATIONS",
                                 style: TextStyle(
-                                  fontSize: 13,
+                                  fontSize: 13.sp,
                                   color: notify
                                       ? Colors.grey.shade800
                                       : Colors.grey.shade400,
                                 ))),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: 5.h,
                         ),
                         Container(
-                          height: 3,
-                          width: 90,
+                          height: 3.h,
+                          width: 90.w,
                           color: notify ? Colors.blue : Colors.grey.shade300,
                         )
                       ],
@@ -112,7 +114,7 @@ class Tips extends StatelessWidget {
           itemCount: Tip.title.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.only(bottom: 15),
+              padding: EdgeInsets.only(bottom: 15.h),
               child: TipContainer(
                 buttonTxt: Tip.buttonTxt[index],
                 title: Tip.title[index],
@@ -146,7 +148,7 @@ class TipContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 15),
+      margin: EdgeInsets.symmetric(horizontal: 15.w),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(color: Colors.grey.shade300)),
@@ -156,7 +158,7 @@ class TipContainer extends StatelessWidget {
             onTap: onContainerCLick,
             child: Container(
               alignment: Alignment.bottomCenter,
-              height: 160,
+              height: 160.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: const AssetImage(
@@ -165,31 +167,32 @@ class TipContainer extends StatelessWidget {
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                         Colors.blueAccent.shade200, BlendMode.modulate)),
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(5), topRight: Radius.circular(5)),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(5.w),
+                    topRight: Radius.circular(5.w)),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 15, left: 20, right: 20),
+                padding: EdgeInsets.only(bottom: 15.h, left: 20.w, right: 20.w),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
                           letterSpacing: 0.5,
-                          fontSize: 22,
+                          fontSize: 22.sp,
                           fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
-                      height: 5,
+                    SizedBox(
+                      height: 5.h,
                     ),
                     Text(
                       subTitle,
-                      style: const TextStyle(
+                      style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           letterSpacing: 0.5,
                           fontWeight: FontWeight.normal),
                     )
@@ -199,7 +202,7 @@ class TipContainer extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
+            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 4.h),
             child: Container(
               color: Colors.white,
               child: Row(
@@ -208,10 +211,10 @@ class TipContainer extends StatelessWidget {
                     TextButton(
                       onPressed: onContainerCLick,
                       child: Text(buttonTxt,
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.blue,
                               fontWeight: FontWeight.bold,
-                              fontSize: 16)),
+                              fontSize: 16.sp)),
                     ),
                     TextButton(
                       onPressed: onDissmiss,
@@ -219,7 +222,7 @@ class TipContainer extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.grey.shade400,
                               fontWeight: FontWeight.bold,
-                              fontSize: 16)),
+                              fontSize: 16.sp)),
                     )
                   ]),
             ),
@@ -246,20 +249,20 @@ class _NotificationsState extends State<Notifications> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 70,
+              radius: 60.r,
               backgroundColor: Colors.grey.shade300,
-              child: const Icon(
+              child: Icon(
                 Icons.check,
                 color: Colors.white,
-                size: 100,
+                size: 80.sp,
               ),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
             Text(
               "Nothing new here",
-              style: TextStyle(fontSize: 30, color: Colors.grey.shade400),
+              style: TextStyle(fontSize: 25.sp, color: Colors.grey.shade400),
             )
           ],
         ),

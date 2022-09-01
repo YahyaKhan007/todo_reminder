@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TaskContainer extends StatelessWidget {
   String txt;
@@ -46,11 +47,12 @@ class TaskContainer extends StatelessWidget {
             Icon(
               icon,
               color: color,
+              size: 22.sp,
             ),
             Text(
               txt,
               style: TextStyle(
-                fontSize: size.width * 0.04,
+                fontSize: 15.sp,
                 color: Colors.black,
               ),
             )

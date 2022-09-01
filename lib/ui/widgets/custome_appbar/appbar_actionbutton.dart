@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ActionButton1 extends StatelessWidget {
   const ActionButton1(
@@ -17,16 +18,17 @@ class ActionButton1 extends StatelessWidget {
             Icon(
               icon,
               color: Colors.grey,
+              size: 25.w,
             ),
-            const Positioned(
+            Positioned(
                 right: 0,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 3),
+                  padding: EdgeInsets.symmetric(horizontal: 3.w),
                   child: CircleAvatar(
-                    radius: 7,
+                    radius: 7.r,
                     backgroundColor: Colors.white,
                     child: CircleAvatar(
-                      radius: 4,
+                      radius: 4.r,
                       backgroundColor: Colors.red,
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:todo_reminder/ui/pages/gloabal_pages/Assetsscreen.dart';
 import 'package:todo_reminder/ui/widgets/widgets.dart';
@@ -20,7 +21,7 @@ class EventOrTaskAdder extends StatelessWidget {
           return Material(
               type: MaterialType.transparency,
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 75, right: 16),
+                padding: EdgeInsets.only(bottom: 75.h, right: 16.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -39,57 +40,59 @@ class EventOrTaskAdder extends StatelessWidget {
                                     child: const AssetScreen()));
                           },
                           child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 15, vertical: 10),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 15.w, vertical: 10.h),
                               decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(5)),
+                                  borderRadius: BorderRadius.circular(5.w)),
                               child: Text(
                                 "Task",
                                 style: TextStyle(
+                                    fontSize: 14.sp,
                                     color: Colors.grey.shade800,
                                     fontWeight: FontWeight.w600),
                               )),
                         ),
-                        const SizedBox(
-                          width: 15,
+                        SizedBox(
+                          width: 15.w,
                         ),
                         ActionFloatingButton(
                             color: Colors.blue,
                             iconColor: Colors.white,
-                            radius: 20,
+                            radius: 20.r,
                             icon: Icons.check_box,
                             ontap: () {})
                       ],
                     ),
-                    const SizedBox(
-                      height: 15,
+                    SizedBox(
+                      height: 15.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 10),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15.w, vertical: 10.h),
                             // height: 35,
                             // width: 60,
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(5)),
+                                borderRadius: BorderRadius.circular(5.w)),
                             child: Text(
                               "Event",
                               style: TextStyle(
+                                  fontSize: 14.sp,
                                   color: Colors.grey.shade800,
                                   fontWeight: FontWeight.w600),
                             )),
-                        const SizedBox(
-                          width: 15,
+                        SizedBox(
+                          width: 15.w,
                         ),
                         ActionFloatingButton(
                             color: Colors.blue,
                             iconColor: Colors.white,
-                            radius: 25,
+                            radius: 25.r,
                             icon: Icons.calendar_month_outlined,
                             ontap: () {})
                       ],

@@ -3,12 +3,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/provider/task_provider.dart';
 import 'package:todo_reminder/ui/screens/main_calendar.dart';
 import 'package:todo_reminder/ui/screens/screens.dart';
 import 'package:todo_reminder/ui/pages/all_task_pages/grid_tasks.dart';
-import 'package:todo_reminder/ui/widgets/bilal/taskcontainer.dart';
 import 'package:todo_reminder/ui/widgets/scroll_to_hide/scroll_to_hide.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +23,6 @@ class HomePage extends StatefulWidget {
 late ScrollController controller;
 bool taskBool = false;
 int _currentIndex = 0;
-int _check = 0;
 
 class _HomePageState extends State<HomePage> {
   late PageController _pageController;
@@ -95,6 +94,9 @@ class _HomePageState extends State<HomePage> {
                     // });
                   },
                   elevation: 0,
+                  iconSize: 18.h,
+                  unselectedFontSize: 13.sp,
+                  selectedFontSize: 13.sp,
                   items: const [
                     BottomNavigationBarItem(
                         icon: Icon(CupertinoIcons.checkmark_alt_circle_fill),
@@ -103,7 +105,9 @@ class _HomePageState extends State<HomePage> {
                         icon: Icon(Icons.edit_calendar_outlined),
                         label: "Calendar"),
                     BottomNavigationBarItem(
-                        icon: Icon(Icons.settings), label: "Settings"),
+                      icon: Icon(Icons.settings),
+                      label: "Settings",
+                    ),
                   ]);
             },
           )),

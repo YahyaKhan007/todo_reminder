@@ -51,18 +51,18 @@ class _PremiumState extends State<Premium> {
                   Navigator.of(context).pop();
                 },
                 icon: CupertinoIcons.xmark),
-            const Center(
+            Center(
               child: Text(
                 "Double your productivity with",
-                style: TextStyle(color: Colors.black, fontSize: 16),
+                style: TextStyle(color: Colors.black, fontSize: 16.sp),
               ),
             ),
-            const Center(
+            Center(
               child: Text(
                 "Any.do Premium",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 25.sp,
                     fontWeight: FontWeight.bold),
               ),
             ),
@@ -170,8 +170,9 @@ class _PremiumState extends State<Premium> {
   }
 
   Widget star(BuildContext context) {
-    return const Icon(
+    return Icon(
       Icons.star,
+      size: 25.sp,
       color: Colors.yellow,
     );
   }

@@ -18,7 +18,7 @@ class ConButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 35.h,
-      width: 110.w,
+      width: 100.w,
       decoration:
           BoxDecoration(borderRadius: BorderRadius.circular(30), color: conclr),
       child: Center(
