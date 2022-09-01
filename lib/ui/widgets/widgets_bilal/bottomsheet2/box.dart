@@ -22,7 +22,7 @@ class Box extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: size.width * 0.0203),
             child: Icon(
               icon,
-              size: size.width * 0.0305,
+              size: 18.sp,
               color: Colors.grey.shade500,
             ),
           ),

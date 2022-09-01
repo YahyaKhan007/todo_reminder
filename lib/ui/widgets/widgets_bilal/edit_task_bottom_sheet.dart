@@ -71,7 +71,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                     ),
                     InkWell(
                       onTap: () {
-                        print(size.width);
+                        Navigator.of(context).pop();
                       },
                       child: text(
                           txt: "Save",
@@ -231,7 +231,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                                 children: [
                                   text(
                                       txt: "Person",
-                                      size: size.width * 0.0356,
+                                      size: 14.sp,
                                       clr: Colors.black,
                                       fw: FontWeight.normal),
                                   SizedBox(
@@ -280,7 +280,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                                   decoration: InputDecoration(
                                       hintText: "Add a new subtask",
                                       hintStyle: TextStyle(
-                                          fontSize: size.width * 0.0407,
+                                          fontSize: 15.sp,
                                           color: Colors.grey.shade300,
                                           fontWeight: FontWeight.w500),
                                       border: InputBorder.none),
@@ -477,7 +477,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
               height: size.height * 0.0463,
             ),
             Container(
-              height: size.height * 0.0526,
+              height: 50.h,
               width: size.width,
               decoration: BoxDecoration(
                   color: Colors.white,
@@ -499,7 +499,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                           txt41: "Done", clr: Colors.blue, icn: Icons.check)),
                 ],
               ),
-            )
+            ),
           ],
         )
       ],

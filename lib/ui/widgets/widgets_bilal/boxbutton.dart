@@ -24,7 +24,7 @@ class boxbutton extends StatelessWidget {
           Icon(
             icn,
             color: clr,
-            size: 22.h,
+            size: 22.sp,
           ),
           SizedBox(
             width: 8.w,

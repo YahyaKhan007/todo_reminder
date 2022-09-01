@@ -43,7 +43,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
           icon: Icon(
             Icons.more_horiz,
             color: Colors.grey,
-            size: 22.w,
+            size: 22.sp,
           ),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5)
@@ -153,7 +153,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
               return IconButton(
                 icon: Icon(
                   Icons.fitbit_rounded,
-                  size: 25.w,
+                  size: 25.sp,
                   color: Colors.grey.shade600,
                 ),
                 onPressed: () {
@@ -208,6 +208,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                                     children: [
                                       Icon(
                                         Icons.add,
+                                        size: 23.sp,
                                         color: Colors.white,
                                       ),
                                       Text(
@@ -285,23 +286,23 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(height: size.height * 0.02),
-                        const Text("Sort",
+                        Text("Sort",
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black)),
                         SizedBox(height: size.height * 0.02),
-                        const Text("Reorder your tasks by",
+                        Text("Reorder your tasks by",
                             style: TextStyle(
                                 letterSpacing: 0.5,
-                                fontSize: 16,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.normal,
                                 color: Colors.black54)),
                         InkWell(
                           onTap: () {},
                           child: Container(
                             width: size.width,
-                            height: 45,
+                            height: 45.h,
                             margin: EdgeInsets.only(top: size.height * 0.03),
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.black87),
@@ -310,7 +311,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                               child: Text("Time",
                                   style: TextStyle(
                                       letterSpacing: 0.5,
-                                      fontSize: 16,
+                                      fontSize: 16.sp,
                                       fontWeight: FontWeight.normal,
                                       color: Colors.black)),
                             ),
@@ -320,7 +321,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                           onTap: () {},
                           child: Container(
                             width: size.width,
-                            height: 45,
+                            height: 45.h,
                             margin: EdgeInsets.only(
                                 top: size.height * 0.03,
                                 bottom: size.height * 0.03),
@@ -331,7 +332,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                               child: Text("List",
                                   style: TextStyle(
                                       letterSpacing: 0.5,
-                                      fontSize: 16,
+                                      fontSize: 16.sp,
                                       fontWeight: FontWeight.normal,
                                       color: Colors.black)),
                             ),
@@ -375,30 +376,31 @@ class PopUpItem extends StatelessWidget {
                 Icon(
                   icon,
                   color: color,
-                  size: 17,
+                  size: 17.sp,
                 ),
-                const SizedBox(
-                  width: 10,
+                SizedBox(
+                  width: 10.w,
                 ),
                 Text(
                   text,
-                  style: TextStyle(color: Colors.grey.shade800, fontSize: 13),
+                  style:
+                      TextStyle(color: Colors.grey.shade800, fontSize: 13.sp),
                 ),
               ],
             ),
-            const SizedBox(
-              width: 30,
+            SizedBox(
+              width: 30.w,
             ),
             if (isNew != null)
               Container(
                 margin: EdgeInsets.zero,
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.w),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5), color: Colors.red),
-                child: const Center(
+                child: Center(
                     child: Text(
                   "NEW",
-                  style: TextStyle(color: Colors.white, fontSize: 8),
+                  style: TextStyle(color: Colors.white, fontSize: .8.sp),
                 )),
               ),
           ],

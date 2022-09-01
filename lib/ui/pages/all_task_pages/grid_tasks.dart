@@ -45,7 +45,7 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
                       decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.search,
-                            size: 15.w,
+                            size: 15.sp,
                           ),
                           labelText: "Search for tasks, events, etc...",
                           labelStyle: TextStyle(fontSize: 14.sp),

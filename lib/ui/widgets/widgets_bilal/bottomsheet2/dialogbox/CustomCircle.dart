@@ -24,7 +24,7 @@ class CustomCircle extends StatelessWidget {
         children: [
           Icon(
             icn,
-            size: 20.w,
+            size: 20.sp,
             color: Colors.black87,
           ),
           text(

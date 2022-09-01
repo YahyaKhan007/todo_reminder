@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/addingcircleavatar.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/alltaskssearch.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/personalDesign.dart';
@@ -30,7 +31,7 @@ class _PersonalState extends State<Personal> {
                 children: [
                   const design(),
                   SizedBox(
-                    height: size.height * 0.015,
+                    height: 10.sp,
                   ),
                   const design(),
                   SizedBox(
@@ -40,7 +41,7 @@ class _PersonalState extends State<Personal> {
                     ("No tasks here yet"),
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: size.width * 0.05,
+                        fontSize: 17.sp,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
@@ -49,17 +50,17 @@ class _PersonalState extends State<Personal> {
                     style: TextStyle(
                         height: 1.5,
                         color: Colors.grey.shade400,
-                        fontSize: size.width * 0.05,
+                        fontSize: 17.sp,
                         fontWeight: FontWeight.w500),
                   ),
                 ],
               ),
               Positioned(
-                  top: size.height * 0.055,
-                  left: size.width * 0.65,
+                  top: 30.sp,
+                  right: 10.sp,
                   child: Container(
-                    height: size.height * 0.085,
-                    width: size.width * 0.17,
+                    height: 60.sp,
+                    width: 60.sp,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(100),
@@ -67,7 +68,7 @@ class _PersonalState extends State<Personal> {
                           BoxShadow(
                               blurRadius: 5,
                               spreadRadius: 1,
-                              color: Colors.grey.shade200,
+                              color: Colors.grey.shade300,
                               offset: const Offset(4, 4)),
                           BoxShadow(
                               blurRadius: 5,
@@ -78,7 +79,7 @@ class _PersonalState extends State<Personal> {
                     child: Icon(
                       Icons.add,
                       size: size.width * 0.09,
-                      color: Colors.grey.shade200,
+                      color: Colors.grey.shade300,
                     ),
                   )),
             ]),

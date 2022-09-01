@@ -45,7 +45,7 @@ class _CostomExpTileState extends State<CostomExpTile> {
               InkWell(
                 onTap: () {},
                 child: Icon(
-                  size: size.width * 0.05,
+                  size: 15.sp,
                   Icons.check_circle,
                   color: Colors.grey.shade400,
                 ),
@@ -67,7 +67,7 @@ class _CostomExpTileState extends State<CostomExpTile> {
               const Spacer(),
               Icon(
                 Icons.cancel,
-                size: size.width * 0.05,
+                size: 15.sp,
                 color: Colors.grey.shade400,
               ),
             ]),
