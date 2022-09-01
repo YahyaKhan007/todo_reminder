@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/pages/setting_pages/premium.dart';
-import 'package:todo_reminder/ui/widgets/Navigation_transion/custome_page_route.dart';
 
-import '../../screen_size.dart';
 import '../../screens/screens.dart';
 import 'profile_photo.dart';
 
@@ -36,9 +35,6 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
-
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -51,18 +47,18 @@ class _ProfileState extends State<Profile> {
               icon: Icon(
                 Icons.arrow_back,
                 color: Colors.blue,
-                size: SH.twenty2,
+                size: 22.h,
               )),
           title: Text(
             "PROFILE",
             style: TextStyle(
-                fontSize: SW.eighteen,
+                fontSize: 18.sp,
                 letterSpacing: -0.5,
                 fontWeight: FontWeight.bold,
                 color: Colors.blue),
           )),
       body: Padding(
-        padding: EdgeInsets.only(left: SW.fifteen, right: SW.five),
+        padding: EdgeInsets.only(left: 15.w, right: 5.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -94,7 +90,7 @@ class _ProfileState extends State<Profile> {
                               child: Hero(
                                 tag: "yahyaProfile",
                                 child: CircleAvatar(
-                                  radius: SW.thirty,
+                                  radius: 30.r,
                                   backgroundImage: const AssetImage(
                                     "assets/images/yahya.jpg",
                                   ),
@@ -102,7 +98,7 @@ class _ProfileState extends State<Profile> {
                               )),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(top: SH.ten),
+                          padding: EdgeInsets.only(top: 10.h),
                           child: InkWell(
                               onTap: () {
                                 _edit(
@@ -113,13 +109,13 @@ class _ProfileState extends State<Profile> {
                               child: Text(
                                 "Edit",
                                 style: TextStyle(
-                                    color: Colors.grey, fontSize: SW.twelve),
+                                    color: Colors.grey, fontSize: 12.sp),
                               )),
                         )
                       ],
                     )),
                 SizedBox(
-                  width: SW.ten,
+                  width: 10.w,
                 ),
                 Expanded(
                   flex: 4,
@@ -132,7 +128,7 @@ class _ProfileState extends State<Profile> {
                         children: [
                           Expanded(
                             child: SizedBox(
-                              height: SH.thirty,
+                              height: 30.h,
                               child: TextField(
                                 // controller: emailController,
                                 // focusNode: emailNode,
@@ -140,13 +136,13 @@ class _ProfileState extends State<Profile> {
                                   border: InputBorder.none,
                                   hintText: "Yahya Khan",
                                   hintStyle: TextStyle(
-                                      fontSize: SW.fifteen,
+                                      fontSize: 15.sp,
                                       // fontWeight: FontWeight.w500,
                                       color: Colors.black,
                                       letterSpacing: 0.3),
                                 ),
                                 style: TextStyle(
-                                    fontSize: SW.sixteen, letterSpacing: 0.3),
+                                    fontSize: 16.sp, letterSpacing: 0.3),
                               ),
                             ),
                           ),
@@ -156,7 +152,7 @@ class _ProfileState extends State<Profile> {
                             },
                             child: Icon(
                               Icons.edit,
-                              size: SH.twenty,
+                              size: 20.h,
                               color: Colors.grey,
                             ),
                           )
@@ -167,7 +163,7 @@ class _ProfileState extends State<Profile> {
                         children: [
                           Expanded(
                             child: SizedBox(
-                              height: SH.twenty,
+                              height: 20.h,
                               child: TextField(
                                 // controller: passController,
                                 // focusNode: passNode,
@@ -175,18 +171,18 @@ class _ProfileState extends State<Profile> {
                                   hintText: "yahya.ali.barki@outlook.com",
                                   border: InputBorder.none,
                                   hintStyle: TextStyle(
-                                      fontSize: SW.fifteen,
+                                      fontSize: 15.sp,
                                       color: Colors.black,
                                       // fontWeight: FontWeight.w500,
                                       letterSpacing: 0.3),
                                 ),
                                 style: TextStyle(
-                                    fontSize: SW.seventeen, letterSpacing: 0.3),
+                                    fontSize: 17.sp, letterSpacing: 0.3),
                               ),
                             ),
                           ),
                           SizedBox(
-                            width: SW.five,
+                            width: 5.w,
                           ),
                           InkWell(
                             onTap: () {
@@ -194,7 +190,7 @@ class _ProfileState extends State<Profile> {
                             },
                             child: Icon(
                               Icons.edit,
-                              size: SH.twenty,
+                              size: 20.h,
                               color: Colors.grey,
                             ),
                           )
@@ -266,7 +262,7 @@ class _ProfileState extends State<Profile> {
           return Material(
             type: MaterialType.transparency,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -274,13 +270,13 @@ class _ProfileState extends State<Profile> {
                 children: [
                   Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: SW.fifteen,
+                      horizontal: 15.w,
                     ),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(SW.ten),
-                            topRight: Radius.circular(SW.ten))),
+                            topLeft: Radius.circular(10.h),
+                            topRight: Radius.circular(10.h))),
                     child: Column(
                       children: [
                         EditOption(
@@ -312,12 +308,12 @@ class _ProfileState extends State<Profile> {
                   ),
                   Container(
                     width: size.width,
-                    height: SH.fifty,
+                    height: 50.h,
                     decoration: BoxDecoration(
                         color: Colors.grey.shade200,
                         borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(SW.ten),
-                            bottomRight: Radius.circular(SW.ten))),
+                            bottomLeft: Radius.circular(10.h),
+                            bottomRight: Radius.circular(10.h))),
                     child: Center(
                         child: InkWell(
                       onTap: () {
@@ -327,7 +323,7 @@ class _ProfileState extends State<Profile> {
                         "CANCEL",
                         style: TextStyle(
                             color: Colors.grey.shade800,
-                            fontSize: SW.thirteen,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.bold),
                       ),
                     )),
@@ -356,7 +352,7 @@ class _ProfileState extends State<Profile> {
           // color: Colors.white,
           type: MaterialType.transparency,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: SW.twennty),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -364,35 +360,35 @@ class _ProfileState extends State<Profile> {
               children: [
                 Container(
                   padding: EdgeInsets.symmetric(
-                    horizontal: SW.fifteen,
+                    horizontal: 15.w,
                   ),
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(SW.ten)),
+                      borderRadius: BorderRadius.circular(10.h)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: SH.ten,
+                        height: 10.h,
                       ),
                       Text(title,
                           style: TextStyle(
                               color: Colors.blue,
                               fontWeight: FontWeight.bold,
-                              fontSize: SW.thirteen)),
+                              fontSize: 13.sp)),
                       Padding(
-                        padding: EdgeInsets.only(top: SH.fifteen),
+                        padding: EdgeInsets.only(top: 15.h),
                         child: Text(
                           txt,
                           style: TextStyle(
                             letterSpacing: 0.5,
                             color: Colors.grey.shade600,
-                            fontSize: SW.thirteen,
+                            fontSize: 13.sp,
                           ),
                         ),
                       ),
                       SizedBox(
-                        height: SH.fifteen,
+                        height: 15.h,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -404,7 +400,7 @@ class _ProfileState extends State<Profile> {
                                     letterSpacing: 0.4,
                                     color: Colors.grey.shade700,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: SW.thirteen,
+                                    fontSize: 13.sp,
                                   ))),
                           TextButton(
                               onPressed: () {},
@@ -413,7 +409,7 @@ class _ProfileState extends State<Profile> {
                                     letterSpacing: 0.4,
                                     color: Colors.blue,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: SW.thirteen,
+                                    fontSize: 13.sp,
                                   ))),
                         ],
                       )
@@ -448,15 +444,14 @@ class EditOption extends StatelessWidget {
       onTap: ontap,
       child: Container(
         width: size.width,
-        padding:
-            EdgeInsets.symmetric(horizontal: SW.fifteen, vertical: SH.fifteen),
+        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
         decoration: BoxDecoration(
             border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
         child: Text(txt,
             style: TextStyle(
               color: color,
               fontWeight: index == 0 ? FontWeight.bold : FontWeight.normal,
-              fontSize: SW.fifteen,
+              fontSize: 15.sp,
             )),
       ),
     );
@@ -479,11 +474,10 @@ class ProfileOption extends StatelessWidget {
       onTap: ontap,
       child: Container(
         alignment: Alignment.centerLeft,
-        height: SH.fifty5,
+        height: 55.h,
         decoration: BoxDecoration(
             border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
-        child:
-            Text(text, style: TextStyle(color: color, fontSize: SW.fourteen)),
+        child: Text(text, style: TextStyle(color: color, fontSize: 14.sp)),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../screen_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../switchbutton.dart';
 import 'dialogbox/Conbutton.dart';
 import 'dialogbox/pageview.dart';
@@ -22,34 +22,33 @@ class _CustomDailogBoxState extends State<CustomDailogBox> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return AlertDialog(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        insetPadding: EdgeInsets.all(SW.fifteen),
-        contentPadding: EdgeInsets.symmetric(vertical: SH.ten),
+        insetPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+        contentPadding: EdgeInsets.symmetric(vertical: 10.h),
         alignment: Alignment.topCenter,
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-                height: SH.fourty5,
+                height: 45.h,
                 width: size.width,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                      bottom: BorderSide(
-                          color: Colors.grey.shade100, width: SW.five)),
+                      bottom:
+                          BorderSide(color: Colors.grey.shade100, width: 5.w)),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+                  padding: EdgeInsets.symmetric(horizontal: 15.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       text(
                           txt: "Add a reminder",
-                          size: SW.eighteen,
+                          size: 18.sp,
                           clr: Colors.black,
                           fw: FontWeight.bold),
                       const CustomSwitch(),
@@ -57,12 +56,12 @@ class _CustomDailogBoxState extends State<CustomDailogBox> {
                   ),
                 )),
             SizedBox(
-              height: SH.twenty,
+              height: 20.h,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+              padding: EdgeInsets.symmetric(horizontal: 15.w),
               child: Container(
-                height: SH.thirty5,
+                height: 35.h,
                 // width: size.width,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -115,7 +114,7 @@ class _CustomDailogBoxState extends State<CustomDailogBox> {
               ),
             ),
             SizedBox(
-              height: SH.fifteen,
+              height: 15.h,
             ),
             if (_check == 1) ...[
               const CustomPageview1(),

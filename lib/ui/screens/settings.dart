@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/provider/setting_buttons_provider.dart';
 import 'package:todo_reminder/ui/pages/pages.dart';
-import 'package:todo_reminder/ui/screen_size.dart';
 import 'package:todo_reminder/ui/screens/screens.dart';
 
 class Settings extends StatefulWidget {
@@ -16,8 +16,6 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -32,15 +30,14 @@ class _SettingsState extends State<Settings> {
                 fontSize: 18),
           )),
       body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
           child: Consumer<SettingButtonsProvider>(
             builder: (context, value, child) {
               return ListView(controller: controller, children: [
                 Text("ACCOUNT",
-                    style:
-                        TextStyle(letterSpacing: 0.3, fontSize: SW.fourteen)),
+                    style: TextStyle(letterSpacing: 0.3, fontSize: 14.sp)),
                 SizedBox(
-                  height: SH.twentyFive,
+                  height: 25.h,
                 ),
                 Options(
                   txt: "Profile",
@@ -93,10 +90,9 @@ class _SettingsState extends State<Settings> {
                   ontap: () {},
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: SH.twenty, bottom: SH.twenty),
+                  padding: EdgeInsets.only(top: 20.h, bottom: 20.h),
                   child: Text("PREFRENCES",
-                      style:
-                          TextStyle(letterSpacing: 0.3, fontSize: SW.fourteen)),
+                      style: TextStyle(letterSpacing: 0.3, fontSize: 14.sp)),
                 ),
                 Options(
                   txt: "Theme",
@@ -361,12 +357,10 @@ class Options extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
     return InkWell(
       onTap: ontap,
       child: Container(
-        height: SH.sixty,
+        height: 60.h,
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(color: Colors.grey.shade300),
@@ -379,7 +373,7 @@ class Options extends StatelessWidget {
             Text(txt,
                 style: TextStyle(
                     letterSpacing: 0.5,
-                    fontSize: SW.fourteen,
+                    fontSize: 14.sp,
                     color: Colors.grey.shade700)),
             // **************************************************
             // for New red Container
@@ -387,14 +381,14 @@ class Options extends StatelessWidget {
 
             if (cont)
               Container(
-                height: SH.twenty2,
-                width: SW.thirty5,
+                height: 22.h,
+                width: 35.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5), color: Colors.red),
                 child: Center(
                     child: Text(
                   "New",
-                  style: TextStyle(color: Colors.white, fontSize: SW.eight),
+                  style: TextStyle(color: Colors.white, fontSize: 8.sp),
                 )),
               ),
             // **************************************************
@@ -405,21 +399,21 @@ class Options extends StatelessWidget {
               Row(
                 children: [
                   CircleAvatar(
-                    radius: SW.twelve,
+                    radius: 12.r,
                     backgroundColor: Colors.blue,
                     child: Icon(
                       icon![0],
                       color: Colors.white,
-                      size: SH.fifteen,
+                      size: 15.h,
                     ),
                   ),
                   SizedBox(
-                    width: SW.five,
+                    width: 5.w,
                   ),
                   Text(buttonTxt!,
                       style: TextStyle(
                         color: Colors.blue,
-                        fontSize: SW.eleven,
+                        fontSize: 11.sp,
                       ))
                 ],
               ),
@@ -439,11 +433,11 @@ class Options extends StatelessWidget {
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 4),
                           child: CircleAvatar(
-                            radius: SW.thirteen,
+                            radius: 13.r,
                             backgroundColor: _color[index],
                             child: Icon(
                               icon![index],
-                              size: SH.fifteen,
+                              size: 15.h,
                               color: _iconColor[index],
                             ),
                           ),
@@ -460,7 +454,7 @@ class Options extends StatelessWidget {
               Text(
                 buttonTxt!,
                 style: TextStyle(
-                    letterSpacing: 0.5, fontSize: SW.fourteen, color: color),
+                    letterSpacing: 0.5, fontSize: 14.sp, color: color),
               )
           ],
         ),

@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_reminder/ui/screen_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/floating_action_button.dart';
 
 class Premium extends StatefulWidget {
@@ -33,22 +33,20 @@ class _PremiumState extends State<Premium> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    SW.init(context: context);
-    SH.init(context: context);
     return Scaffold(
       body: SingleChildScrollView(
           child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: SW.twennty),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: SH.fourty,
+              height: 40.h,
             ),
             ActionFloatingButton(
                 color: Colors.grey.shade400,
                 iconColor: Colors.grey.shade900,
-                radius: SW.thirteen,
+                radius: 13.r,
                 ontap: () {
                   Navigator.of(context).pop();
                 },
@@ -101,7 +99,7 @@ class _PremiumState extends State<Premium> {
               ),
             ),
             SizedBox(
-                height: SH.one50,
+                height: 150.h,
                 width: size.width,
                 child: CarouselSlider(
                     items: [
@@ -112,22 +110,22 @@ class _PremiumState extends State<Premium> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: SW.fourteen,
+                                  fontSize: 14.sp,
                                   fontStyle: FontStyle.italic)),
                           SizedBox(
-                            height: SH.ten,
+                            height: 10.h,
                           ),
                           Text("Christian Harris, Chicago",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: SW.fourteen,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.bold))
                         ],
                       )
                     ],
                     options: CarouselOptions(
-                      height: SH.one20,
+                      height: 120.h,
                       aspectRatio: 16 / 9,
                       viewportFraction: 0.8,
                       initialPage: 0,
@@ -142,26 +140,26 @@ class _PremiumState extends State<Premium> {
                       scrollDirection: Axis.horizontal,
                     ))),
             Container(
-              margin: EdgeInsets.only(top: SH.fifteen),
-              height: SH.fifty5,
+              margin: EdgeInsets.only(top: 15.h),
+              height: 55.h,
               width: size.width,
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 21, 118, 197),
-                  borderRadius: BorderRadius.circular(SH.fifty)),
+                  borderRadius: BorderRadius.circular(50.h)),
               child: Center(
                 child: Text(
                   "Continue..",
-                  style: TextStyle(color: Colors.white, fontSize: SW.sixteen),
+                  style: TextStyle(color: Colors.white, fontSize: 16.sp),
                 ),
               ),
             ),
             Center(
               child: Padding(
-                padding: EdgeInsets.only(top: SH.fifteen),
+                padding: EdgeInsets.only(top: 15.h),
                 child: Text(
                   "Billed annually. Cancel Anytime.",
-                  style: TextStyle(
-                      color: Colors.grey.shade600, fontSize: SW.fourteen),
+                  style:
+                      TextStyle(color: Colors.grey.shade600, fontSize: 14.sp),
                 ),
               ),
             )
@@ -181,7 +179,7 @@ class _PremiumState extends State<Premium> {
   Widget item(
       BuildContext context, size, var image, String txt, VoidCallback ontap) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: SW.twennty),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: InkWell(
         onTap: ontap,
         child: Column(
@@ -191,15 +189,15 @@ class _PremiumState extends State<Premium> {
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: SW.eighteen,
+              radius: 18.r,
               backgroundImage: AssetImage(image),
             ),
             Padding(
-              padding: EdgeInsets.only(top: SH.ten),
+              padding: EdgeInsets.only(top: 10.h),
               child: Text(
                 txt,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey.shade600, fontSize: SW.ten),
+                style: TextStyle(color: Colors.grey.shade600, fontSize: 10.sp),
               ),
             )
           ],

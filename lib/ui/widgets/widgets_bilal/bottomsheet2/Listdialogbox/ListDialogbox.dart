@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/bottomsheet2/Listdialogbox/ListBox.dart';
-
-import '../../../../screen_size.dart';
 
 class CustomListDialogbox extends StatelessWidget {
   const CustomListDialogbox({Key? key}) : super(key: key);
@@ -9,8 +8,7 @@ class CustomListDialogbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return AlertDialog(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -22,24 +20,24 @@ class CustomListDialogbox extends StatelessWidget {
         children: [
           ListBox(
             txt81: "Select List",
-            txtsize: SW.twennty,
+            txtsize: 20.sp,
             iconclr: Colors.white,
           ),
           Divider(
             color: Colors.grey.shade100,
             thickness: 4,
           ),
-          ListBox(iconclr: Colors.blue, txt81: "Personal", txtsize: SW.fifteen),
+          ListBox(iconclr: Colors.blue, txt81: "Personal", txtsize: 15.sp),
           Divider(
             color: Colors.grey.shade100,
             thickness: 2,
           ),
-          ListBox(iconclr: Colors.white, txt81: "Work", txtsize: SW.fifteen),
+          ListBox(iconclr: Colors.white, txt81: "Work", txtsize: 15.sp),
           Divider(
             color: Colors.grey.shade100,
             thickness: 2,
           ),
-          ListBox(iconclr: Colors.white, txt81: "Demo", txtsize: SW.fifteen),
+          ListBox(iconclr: Colors.white, txt81: "Demo", txtsize: 15.sp),
         ],
       ),
     );

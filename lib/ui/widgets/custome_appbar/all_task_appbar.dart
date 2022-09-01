@@ -2,12 +2,11 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/provider/task_provider.dart';
 import 'package:todo_reminder/ui/pages/pages.dart';
 import 'package:todo_reminder/ui/widgets/widgets.dart';
-
-import '../../screen_size.dart';
 
 class AllTaskAppBar extends StatefulWidget {
   const AllTaskAppBar({Key? key, required this.title}) : super(key: key);
@@ -22,8 +21,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SH.init(context: context);
-    SW.init(context: context);
+
     return AppBar(
       iconTheme: Theme.of(context).iconTheme,
       centerTitle: true,
@@ -117,22 +115,22 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                     text: "Moment",
                   )),
               PopupMenuItem(
-                  padding: EdgeInsets.only(top: SH.seven),
+                  padding: EdgeInsets.only(top: 7.h),
                   value: 'Sort',
                   child: PopupMenuItem(
                     child: Row(children: [
                       Icon(
                         CupertinoIcons.arrow_2_circlepath,
                         color: Colors.grey.shade400,
-                        size: SH.eighteen,
+                        size: 18.h,
                       ),
                       SizedBox(
-                        width: SW.ten,
+                        width: 10.w,
                       ),
                       Text(
                         "Last Sync: 19 mins ago",
                         style: TextStyle(
-                            color: Colors.grey.shade400, fontSize: SW.twelve),
+                            color: Colors.grey.shade400, fontSize: 12.sp),
                       )
                     ]),
                   )),
@@ -144,7 +142,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
       ],
       title: Text(
         widget.title,
-        style: TextStyle(color: Colors.black, fontSize: SW.fifteen),
+        style: TextStyle(color: Colors.black, fontSize: 15.sp),
       ),
       leading: Align(
           alignment: Alignment.centerRight,
@@ -153,7 +151,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
               return IconButton(
                 icon: Icon(
                   Icons.fitbit_rounded,
-                  size: SH.twentyFive,
+                  size: 25.h,
                   color: Colors.grey.shade600,
                 ),
                 onPressed: () {
@@ -192,18 +190,17 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                               Center(
                                 child: Text("Filter by",
                                     style: TextStyle(
-                                        fontSize: SW.twenty5,
+                                        fontSize: 25.sp,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black)),
                               ),
                               Container(
                                   margin: EdgeInsets.symmetric(
-                                      horizontal: SW.twennty,
-                                      vertical: SH.seven),
-                                  height: SH.fourty,
-                                  width: SW.hundred,
+                                      horizontal: 20.w, vertical: 7.h),
+                                  height: 40.h,
+                                  width: 100.w,
                                   padding: EdgeInsets.symmetric(
-                                      vertical: SH.five, horizontal: SW.seven),
+                                      vertical: 5.h, horizontal: 7.w),
                                   decoration: BoxDecoration(
                                       color: Colors.yellow,
                                       borderRadius: BorderRadius.circular(20)),
@@ -217,14 +214,13 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                                         "Priority",
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: SW.thirteen),
+                                            fontSize: 13.sp),
                                       ),
                                     ],
                                   )),
-                              SizedBox(height: SH.seven),
+                              SizedBox(height: 7.h),
                               Container(
-                                padding:
-                                    EdgeInsets.symmetric(horizontal: SW.fourty),
+                                padding: EdgeInsets.symmetric(horizontal: 40.w),
                                 decoration: BoxDecoration(
                                     color: Colors.white,
                                     boxShadow: [
@@ -240,12 +236,12 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                                     CupertinoButton(
                                         child: Text("Clear filter",
                                             style: TextStyle(
-                                                fontSize: SW.fourteen,
+                                                fontSize: 14.sp,
                                                 fontWeight: FontWeight.w600,
                                                 color: Colors.black87)),
                                         onPressed: () {}),
                                     Container(
-                                      height: SH.thirty,
+                                      height: 30.h,
                                       width: 2,
                                       color: Colors.grey,
                                     ),
@@ -254,7 +250,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
                                           "Apply",
                                           style: TextStyle(
                                             letterSpacing: 0.3,
-                                            fontSize: SW.fourteen,
+                                            fontSize: 14.sp,
                                             fontWeight: FontWeight.w600,
                                           ),
                                         ),
@@ -279,7 +275,7 @@ class _AllTaskAppBarState extends State<AllTaskAppBar> {
               children: [
                 Container(
                   width: size!.width,
-                  padding: EdgeInsets.symmetric(horizontal: SW.twennty),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(

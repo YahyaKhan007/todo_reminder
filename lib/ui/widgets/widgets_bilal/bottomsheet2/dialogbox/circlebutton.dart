@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../screen_size.dart';
 import '../text.dart';
@@ -16,18 +17,16 @@ class circlebutton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
     return Container(
-      height: SH.sixty5,
-      width: SW.sixty5,
+      height: 65.h,
+      width: 65.w,
       decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(color: bsideclr, width: 2),
           borderRadius: BorderRadius.circular(100)),
       child: Center(
-          child: text(
-              txt: txt61, size: SW.twelve, clr: txtclor, fw: FontWeight.w500)),
+          child:
+              text(txt: txt61, size: 12.h, clr: txtclor, fw: FontWeight.w500)),
     );
   }
 }

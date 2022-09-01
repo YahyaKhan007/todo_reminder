@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:todo_reminder/ui/pages/gloabal_pages/Assetsscreen.dart';
 import 'package:todo_reminder/ui/widgets/widgets.dart';
-
-import '../../screen_size.dart';
 
 class BottomContainer extends StatelessWidget {
   const BottomContainer({Key? key}) : super(key: key);
@@ -11,11 +10,10 @@ class BottomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return Container(
-      padding: EdgeInsets.symmetric(vertical: SH.seven, horizontal: SW.ten),
-      height: SH.sixty,
+      padding: EdgeInsets.symmetric(vertical: 7.h, horizontal: 10.w),
+      height: 60.h,
       width: size.width,
       decoration: BoxDecoration(
           color: Colors.grey.shade100,
@@ -24,11 +22,10 @@ class BottomContainer extends StatelessWidget {
         Expanded(
             child: TextField(
           decoration: InputDecoration(
-              contentPadding:
-                  EdgeInsets.only(left: SW.twennty, right: SW.fifteen),
+              contentPadding: EdgeInsets.only(left: 20.w, right: 15.w),
               hintText: "I want to...",
               hintStyle:
-                  TextStyle(color: Colors.grey.shade500, fontSize: SW.fourteen),
+                  TextStyle(color: Colors.grey.shade500, fontSize: 14.sp),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey.shade500),
                 borderRadius: BorderRadius.circular(25),
@@ -43,12 +40,12 @@ class BottomContainer extends StatelessWidget {
               )),
         )),
         Padding(
-          padding: EdgeInsets.only(left: SW.fifteen),
+          padding: EdgeInsets.only(left: 15.w),
           child: ActionFloatingButton(
             color: Colors.blue,
             iconColor: Colors.white,
             icon: Icons.add,
-            radius: SW.twennty,
+            radius: 20.r,
             ontap: () {
               Navigator.push(
                   context,

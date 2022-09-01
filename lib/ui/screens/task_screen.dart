@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/provider/task_provider.dart';
 import 'package:todo_reminder/ui/pages/all_task_pages/next7days.dart';
@@ -26,12 +27,11 @@ class _TaskScreensState extends State<TaskScreens> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SH.init(context: context);
 
     return Scaffold(
         bottomSheet: const BottomContainer(),
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(SH.fifty3),
+            preferredSize: Size.fromHeight(53.h),
             child: Consumer<TaskProvider>(
               builder: (context, value, child) {
                 return AllTaskAppBar(

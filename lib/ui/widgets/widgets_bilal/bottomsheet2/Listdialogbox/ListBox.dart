@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../screen_size.dart';
 import '../text.dart';
@@ -16,14 +17,13 @@ class ListBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return Container(
-      height: SH.fourty,
+      height: 40.h,
       color: Colors.white,
       width: size.width,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+        padding: EdgeInsets.symmetric(horizontal: 15.w),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           text(
@@ -34,7 +34,7 @@ class ListBox extends StatelessWidget {
           Icon(
             Icons.check,
             color: iconclr,
-            size: SW.twennty,
+            size: 20.h,
           )
         ]),
       ),

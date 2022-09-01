@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/pages/pages.dart';
 import 'package:todo_reminder/ui/widgets/Navigation_transion/custome_page_route.dart';
-
-import '../../screen_size.dart';
 
 class Integration extends StatelessWidget {
   const Integration({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -26,7 +23,7 @@ class Integration extends StatelessWidget {
           title: Text(
             "INTEGRATION",
             style: TextStyle(
-                fontSize: SW.ninteen,
+                fontSize: 19.sp,
                 letterSpacing: -0.5,
                 fontWeight: FontWeight.bold,
                 color: Colors.blue),
@@ -79,7 +76,7 @@ class Option extends StatelessWidget {
       onTap: ontap,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
-        height: SH.fourty,
+        height: 40.h,
         // decoration: BoxDecoration(
         //     border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
         child: Row(
@@ -88,7 +85,7 @@ class Option extends StatelessWidget {
               txt,
               style: TextStyle(
                   letterSpacing: 0.5,
-                  fontSize: SW.fifteen,
+                  fontSize: 15.sp,
                   color: Colors.grey.shade600),
             ),
           ],

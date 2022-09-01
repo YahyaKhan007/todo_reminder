@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/edit_task_bottom_sheet.dart';
 
-import '../../screen_size.dart';
 import 'alltasksText.dart';
 
 class CostomExpTile extends StatefulWidget {
@@ -19,7 +18,6 @@ class _CostomExpTileState extends State<CostomExpTile> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
 
     return ExpansionTile(
       trailing: const Icon(

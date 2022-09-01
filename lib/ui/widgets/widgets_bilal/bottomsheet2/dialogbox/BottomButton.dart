@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../screen_size.dart';
 import '../text.dart';
@@ -14,14 +15,13 @@ class BottomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return Container(
       alignment: Alignment.center,
-      height: SH.fourty5,
+      height: 45.h,
       decoration: BoxDecoration(
-        border: Border(
-            top: BorderSide(color: Colors.grey.shade100, width: SW.five)),
+        border:
+            Border(top: BorderSide(color: Colors.grey.shade100, width: 5.w)),
         color: Colors.white,
       ),
       width: size.width,
@@ -37,7 +37,7 @@ class BottomButton extends StatelessWidget {
               child: Center(
                 child: text(
                     txt: txt71,
-                    size: SW.sixteen,
+                    size: 16.h,
                     clr: Colors.black,
                     fw: FontWeight.w700),
               ),
@@ -47,10 +47,7 @@ class BottomButton extends StatelessWidget {
             flex: 1,
             child: Center(
               child: text(
-                  txt: txt72,
-                  size: SW.sixteen,
-                  clr: txtclr,
-                  fw: FontWeight.w700),
+                  txt: txt72, size: 16.h, clr: txtclr, fw: FontWeight.w700),
             ),
           )
         ],

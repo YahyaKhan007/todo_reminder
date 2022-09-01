@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../screen_size.dart';
 import '../text.dart';
 import 'BottomButton.dart';
 
@@ -10,8 +10,7 @@ class Pageview3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return Container(
       // height: 350,
       width: size.width,
@@ -19,8 +18,8 @@ class Pageview3 extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: SH.one50,
-            width: SW.two50,
+            height: 150.h,
+            width: 250.w,
             decoration: const BoxDecoration(
               color: Colors.white,
               // image:
@@ -28,36 +27,36 @@ class Pageview3 extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: SH.twentyFive,
+            height: 25.h,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: Text(
               "Get reminders where they matter the most",
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: SW.eighteen,
+                  fontSize: 18.sp,
                   color: Colors.black,
                   fontWeight: FontWeight.w600),
             ),
           ),
           SizedBox(
-            height: SH.fifteen,
+            height: 15.h,
           ),
           Container(
-            height: SH.fourty,
+            height: 40.h,
             width: size.width - 80,
             decoration: BoxDecoration(
                 color: Colors.blue, borderRadius: BorderRadius.circular(5)),
             child: Center(
                 child: text(
                     txt: "Upgrade To Premium",
-                    size: SW.fourteen,
+                    size: 14.h,
                     clr: Colors.white,
                     fw: FontWeight.bold)),
           ),
           SizedBox(
-            height: SH.fifteen,
+            height: 15.h,
           ),
           BottomButton(
               txt71: "Cancle", txtclr: Colors.grey.shade300, txt72: "Save")

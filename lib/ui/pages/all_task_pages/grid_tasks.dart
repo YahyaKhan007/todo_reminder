@@ -1,12 +1,12 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/provider/add_grocery_condition.dart';
 import 'package:todo_reminder/provider/task_provider.dart';
 import 'package:todo_reminder/ui/widgets/add_item/bottom_sheet.dart';
 
-import '../../screen_size.dart';
 import '../../widgets/bilal/taskcontainer.dart';
 import '../../widgets/widgets_bilal/grocerypopmenu.dart';
 
@@ -20,8 +20,6 @@ class MainTaskScreen extends StatefulWidget {
 class _MainTaskScreenState extends State<MainTaskScreen> {
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
     Size size = MediaQuery.of(context).size;
     return Scaffold(body: Consumer<TaskProvider>(
       builder: (context, value, child) {
@@ -40,7 +38,7 @@ class _MainTaskScreenState extends State<MainTaskScreen> {
                   Container(
                     height: size.height * 0.06,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(30.r),
                       color: const Color.fromARGB(31, 167, 161, 161),
                     ),
                     child: const TextField(
@@ -220,10 +218,10 @@ class GridViewTask extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             Positioned(
-                top: -SW.fifteen,
+                top: -15.h,
                 child: Container(
-                  width: SW.sixty,
-                  height: SH.seven,
+                  width: 60.w,
+                  height: 7.h,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(5)),
@@ -231,23 +229,23 @@ class GridViewTask extends StatelessWidget {
             SingleChildScrollView(
               child: Column(mainAxisSize: MainAxisSize.min, children: [
                 SizedBox(
-                  height: SH.twenty,
+                  height: 20.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: SH.twenty),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       SizedBox(
                         // color: Colors.red,
-                        width: SW.three100,
-                        height: 40,
+                        width: 110.w,
+                        height: 40.h,
                         child: Center(
                           child: Text(
                             ("Grocery List"),
                             style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                fontSize: SW.twenty5,
+                                fontSize: 25.sp,
                                 color: Colors.black),
                           ),
                         ),
@@ -287,16 +285,16 @@ class GridViewTask extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: SH.hundred,
+                  height: 100.h,
                 ),
                 const Image(image: AssetImage("assets/images/bg.png")),
                 SizedBox(
-                  height: SH.seventy,
+                  height: 70.h,
                 ),
                 Text("Your list is empty",
                     style: TextStyle(
                       color: Colors.grey,
-                      fontSize: SW.twennty,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w300,
                     )),
                 const Icon(
@@ -304,7 +302,7 @@ class GridViewTask extends StatelessWidget {
                   color: Colors.grey,
                 ),
                 SizedBox(
-                  height: SH.twenty2,
+                  height: 22.h,
                 ),
                 const BottomContainer()
               ]),
@@ -323,7 +321,7 @@ class GridViewTask extends StatelessWidget {
           // color: Colors.white,
           type: MaterialType.transparency,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -334,16 +332,16 @@ class GridViewTask extends StatelessWidget {
                   // width: size.width * 0.9,
                   decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)),
+                      borderRadius: BorderRadius.circular(10.r)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
                         padding: EdgeInsets.symmetric(
-                            horizontal: SW.fifteen, vertical: SH.five),
+                            horizontal: 15.w, vertical: 5.h),
                         decoration: BoxDecoration(
                             color: Colors.grey.shade100,
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(10.r)),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
@@ -351,7 +349,7 @@ class GridViewTask extends StatelessWidget {
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: SW.seventeen),
+                                    fontSize: 17.sp),
                                 maxLines: 4,
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
@@ -359,7 +357,7 @@ class GridViewTask extends StatelessWidget {
                                   hintStyle: TextStyle(
                                       color: Colors.grey.shade600,
                                       fontWeight: FontWeight.w600,
-                                      fontSize: SW.seventeen),
+                                      fontSize: 17.sp),
                                 ),
                               ),
                               Row(
@@ -372,7 +370,7 @@ class GridViewTask extends StatelessWidget {
                                     style: TextStyle(
                                         color: Colors.grey.shade900,
                                         fontWeight: FontWeight.normal,
-                                        fontSize: SW.fifteen),
+                                        fontSize: 15.sp),
                                   ),
                                   const SizedBox(
                                     width: 10,
@@ -409,7 +407,7 @@ class GridViewTask extends StatelessWidget {
                                   "Cancel",
                                   style: TextStyle(
                                       color: Colors.grey.shade800,
-                                      fontSize: SW.fifteen,
+                                      fontSize: 15.sp,
                                       fontWeight: FontWeight.bold),
                                 )),
                             Container(
@@ -425,7 +423,7 @@ class GridViewTask extends StatelessWidget {
                                   "Save",
                                   style: TextStyle(
                                       color: Colors.grey,
-                                      fontSize: SW.fifteen,
+                                      fontSize: 15.sp,
                                       fontWeight: FontWeight.bold),
                                 )),
                           ],

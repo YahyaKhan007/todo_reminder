@@ -2,8 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../screen_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 bool isCheck = false;
 
@@ -67,8 +66,6 @@ class _TagsState extends State<Tags> {
   @override
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -80,12 +77,12 @@ class _TagsState extends State<Tags> {
             icon: Icon(
               Icons.arrow_back,
               color: Colors.blue,
-              size: SH.twenty2,
+              size: 20.h,
             )),
         title: Text(
           "TAGS",
           style: TextStyle(
-              fontSize: SW.ninteen,
+              fontSize: 19.sp,
               letterSpacing: -0.5,
               fontWeight: FontWeight.bold,
               color: Colors.blue),
@@ -98,7 +95,7 @@ class _TagsState extends State<Tags> {
                     letterSpacing: 0.4,
                     color: Colors.blue.shade500,
                     fontWeight: FontWeight.bold,
-                    fontSize: SW.sixteen,
+                    fontSize: 16.sp,
                   ))),
         ],
       ),
@@ -114,20 +111,6 @@ class _TagsState extends State<Tags> {
               });
             }),
           ),
-          // Expanded(
-          //   child: ListView.builder(
-          //       primary: true,
-          //       physics: const NeverScrollableScrollPhysics(),
-          //       itemCount: priority.length,
-          //       itemBuilder: (context, index) {
-          //         return TagOption(
-          //           color: priorityColor[index],
-          //           check: false,
-          //           ontap: () {},
-          //           txt: "Priority",
-          //         );
-          //       }),
-          // ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(
@@ -136,12 +119,12 @@ class _TagsState extends State<Tags> {
                 Expanded(
                   flex: 3,
                   child: Padding(
-                    padding: EdgeInsets.only(left: SW.twenty5, right: SW.ten),
+                    padding: EdgeInsets.only(left: 25.w, right: 10.w),
                     child: Text(
                       "Upgrade to Any.do Premium for more tags & colors",
                       style: TextStyle(
                           color: Colors.black87,
-                          fontSize: SW.fifteen,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.normal),
                     ),
                   ),
@@ -149,10 +132,10 @@ class _TagsState extends State<Tags> {
                 Expanded(
                     flex: 1,
                     child: Padding(
-                      padding: EdgeInsets.only(right: SW.fifteen),
+                      padding: EdgeInsets.only(right: 15.w),
                       child: Container(
-                          height: SH.thirty,
-                          width: SW.twennty,
+                          height: 30.h,
+                          width: 20.w,
                           padding: EdgeInsets.zero,
                           decoration: BoxDecoration(
                               color: Colors.blue.shade500,
@@ -163,7 +146,7 @@ class _TagsState extends State<Tags> {
                                 child: Text(
                                   "Upgrade",
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: SW.twelve),
+                                      color: Colors.white, fontSize: 12.sp),
                                 ),
                               ))),
                     ))
@@ -206,15 +189,15 @@ class _TagsState extends State<Tags> {
     return InkWell(
       onTap: ontap,
       child: Container(
-        height: SH.fifteen,
-        width: SW.fifteen,
+        height: 15.h,
+        width: 15.w,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5),
             border: Border.all(color: Colors.white)),
         child: Icon(
           Icons.check,
           color: isCheck ? Colors.white : Colors.transparent,
-          size: SH.ten,
+          size: 10.h,
         ),
       ),
     );
@@ -242,22 +225,22 @@ class _TagOptionState extends State<TagOption> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: SH.fifty,
+      height: 50.h,
       color: widget.color,
       child: ListTile(
         onTap: widget.ontap,
-        contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: SW.ten),
+        contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10.w),
         leading: widget.custom_switch,
         title: Text(
           widget.txt,
-          style: TextStyle(color: Colors.white, fontSize: SW.fifteen),
+          style: TextStyle(color: Colors.white, fontSize: 15.sp),
         ),
         trailing: IconButton(
             onPressed: widget.ontap,
             icon: Icon(
               CupertinoIcons.eyedropper,
               color: Colors.white,
-              size: SH.twenty,
+              size: 20.h,
             )),
       ),
     );

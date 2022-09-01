@@ -13,10 +13,7 @@ class _Next7DaysState extends State<Next7Days> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SH.init(context: context);
-    SW.init(context: context);
-    print("$SW.screenWidth}");
-    print("twenty five ====>> ${SH.twentyFive}");
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

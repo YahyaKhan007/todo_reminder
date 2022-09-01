@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../screen_size.dart';
 import '../text.dart';
@@ -11,16 +12,15 @@ class CustomPageview1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return SizedBox(
       //color: Colors.red,
       // width: size.width,
-      height: SH.one65,
+      height: 165.h,
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -44,21 +44,21 @@ class CustomPageview1 extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: SH.thirty,
+            height: 30.h,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: SW.thirty),
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: Row(
               children: [
                 text(
                     txt: "Start on",
-                    size: SW.thirteen,
+                    size: 13.sp,
                     clr: Colors.black,
                     fw: FontWeight.bold),
                 const Spacer(),
                 text(
                     txt: "20 Aug 2021 10:49 pm",
-                    size: SW.thirteen,
+                    size: 13.sp,
                     clr: Colors.blue,
                     fw: FontWeight.w600),
                 const Icon(Icons.arrow_drop_down),

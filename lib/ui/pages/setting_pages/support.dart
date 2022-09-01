@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_reminder/ui/screen_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Support extends StatelessWidget {
   const Support({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class Support extends StatelessWidget {
           title: Text(
             "SUPPORT",
             style: TextStyle(
-                fontSize: SW.ninteen,
+                fontSize: 19.sp,
                 letterSpacing: -0.5,
                 fontWeight: FontWeight.bold,
                 color: Colors.blue),
@@ -70,8 +70,7 @@ class SupportOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return Expanded(
         child: Container(
       width: size.width,
@@ -85,10 +84,10 @@ class SupportOption extends StatelessWidget {
           children: [
             if (index == 2)
               CircleAvatar(
-                radius: SW.twelve,
+                radius: 12.r,
                 child: Icon(
                   icon,
-                  size: SH.fifteen,
+                  size: 15.h,
                   color: Colors.white,
                 ),
               )
@@ -96,16 +95,16 @@ class SupportOption extends StatelessWidget {
               Icon(
                 icon,
                 color: Colors.blue,
-                size: SH.twentyFive,
+                size: 25.h,
               ),
             SizedBox(
-              height: SH.ten,
+              height: 10.h,
             ),
             if (index != 100)
               Text(txt,
                   style: TextStyle(
                       color: Colors.grey.shade700,
-                      fontSize: SW.twennty,
+                      fontSize: 20.sp,
                       letterSpacing: 0.5)),
             if (index == 100)
               Row(
@@ -115,7 +114,7 @@ class SupportOption extends StatelessWidget {
                   Text("I",
                       style: TextStyle(
                           color: Colors.grey.shade700,
-                          fontSize: SW.twennty,
+                          fontSize: 20.sp,
                           letterSpacing: 0.5)),
                   const Icon(
                     CupertinoIcons.heart_fill,
@@ -124,7 +123,7 @@ class SupportOption extends StatelessWidget {
                   Text("ANY.DO",
                       style: TextStyle(
                           color: Colors.grey.shade700,
-                          fontSize: SW.twennty,
+                          fontSize: 20.sp,
                           letterSpacing: 0.5)),
                 ],
               )

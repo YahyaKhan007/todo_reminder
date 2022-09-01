@@ -2,16 +2,14 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/pages/setting_pages/support.dart';
-import 'package:todo_reminder/ui/screen_size.dart';
 
 class Community extends StatelessWidget {
   const Community({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -27,7 +25,7 @@ class Community extends StatelessWidget {
           title: Text(
             "COMMUNITY",
             style: TextStyle(
-                fontSize: SW.ninteen,
+                fontSize: 19.sp,
                 letterSpacing: -0.5,
                 fontWeight: FontWeight.bold,
                 color: Colors.blue),

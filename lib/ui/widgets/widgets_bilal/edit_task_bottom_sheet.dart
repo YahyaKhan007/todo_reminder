@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/switchbutton.dart';
 
 import '../../screen_size.dart';
@@ -25,19 +26,16 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
   bool _isvisible = true;
   @override
   Widget build(BuildContext context) {
-    SW.init(context: context);
-    SH.init(context: context);
-
     Size size = MediaQuery.of(context).size;
     return Stack(
       alignment: AlignmentDirectional.topCenter,
       clipBehavior: Clip.none,
       children: [
         Positioned(
-            top: -SH.fifteen,
+            top: -15.h,
             child: Container(
-              width: SW.fifty,
-              height: SH.six,
+              width: 50.w,
+              height: 6.h,
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(30)),
             )),
@@ -63,7 +61,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                       decoration: BoxDecoration(
                           //color: Colors.red,
                           border: Border(
-                        bottom: BorderSide(color: Colors.blue, width: SW.three),
+                        bottom: BorderSide(color: Colors.blue, width: 3.w),
                       )),
                       child: Center(
                           child: text(
@@ -92,7 +90,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
               // color: Colors.red,
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: SW.twennty),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -174,7 +172,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                               )
                             : Container(
                                 width: size.width,
-                                height: SH.fifty,
+                                height: 50.h,
                                 decoration: BoxDecoration(
                                     color: const Color.fromARGB(
                                         255, 238, 233, 233),
@@ -188,7 +186,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
                                       children: [
                                         text(
                                             txt: "Tomorrow at 09:00 AM",
-                                            size: SW.fifteen,
+                                            size: 15.h,
                                             clr: Colors.blue,
                                             fw: FontWeight.w500),
                                         const CustomSwitch(),
@@ -481,8 +479,7 @@ class _EditTaskCustomBottomSheetState extends State<EditTaskCustomBottomSheet> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(
-                    top:
-                        BorderSide(color: Colors.grey.shade100, width: SW.five),
+                    top: BorderSide(color: Colors.grey.shade100, width: 5.w),
                   )),
               child: Row(
                 children: [

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../screen_size.dart';
 import 'BottomButton.dart';
 import 'CustomCircle.dart';
 
@@ -10,15 +10,14 @@ class Pagview2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    SW.init(context: context);
-    SH.init(context: context);
+
     return Container(
       // height: 235,
       width: size.width,
       color: Colors.white,
       child: Column(children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
@@ -35,10 +34,10 @@ class Pagview2 extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: SH.fifteen,
+          height: 15.h,
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: SW.fifteen),
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
@@ -58,7 +57,7 @@ class Pagview2 extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: SH.fifteen,
+          height: 15.h,
         ),
         BottomButton(
           txt71: "Cancle",
