@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:todo_reminder/ui/pages/gloabal_pages/Assetsscreen.dart';
 import 'package:todo_reminder/ui/widgets/widgets.dart';
 
@@ -14,7 +13,7 @@ class EventOrTaskAdder extends StatelessWidget {
     return showButtons(context);
   }
 
-  static showButtons(BuildContext context) {
+  showButtons(BuildContext context) {
     return showDialog(
         context: context,
         builder: (context) {
@@ -32,16 +31,12 @@ class EventOrTaskAdder extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    duration: const Duration(milliseconds: 300),
-                                    type: PageTransitionType.fade,
-                                    child: const AssetScreen()));
+                            Navigator.of(context).pop();
+                            _showbottomsheet2(context);
                           },
                           child: Container(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 15.w, vertical: 10.h),
+                                  horizontal: 15.w, vertical: 7.h),
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(5.w)),
@@ -73,7 +68,7 @@ class EventOrTaskAdder extends StatelessWidget {
                       children: [
                         Container(
                             padding: EdgeInsets.symmetric(
-                                horizontal: 15.w, vertical: 10.h),
+                                horizontal: 15.w, vertical: 7.h),
                             // height: 35,
                             // width: 60,
                             decoration: BoxDecoration(
@@ -100,6 +95,23 @@ class EventOrTaskAdder extends StatelessWidget {
                   ],
                 ),
               ));
+        });
+  }
+
+  _showbottomsheet2(BuildContext context) {
+    showModalBottomSheet(
+        isScrollControlled: true,
+        context: context,
+        backgroundColor: Colors.white,
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+          top: Radius.circular(15.0),
+        )),
+        builder: (context) {
+          return StatefulBuilder(
+              builder: (BuildContext context, StateSetter setState) {
+            return const AssetScreen();
+          });
         });
   }
 }

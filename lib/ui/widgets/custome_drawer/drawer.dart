@@ -15,12 +15,6 @@ class CalendarDrawer extends StatefulWidget {
 }
 
 class _CalendarDrawerState extends State<CalendarDrawer> {
-  final pagesTitle = const ["All Tasks", "Notifications", "Calls", "Contacts"];
-
-  final ValueNotifier<String> title = ValueNotifier("All Tasks");
-
-  final ValueNotifier<int> pageIndex = ValueNotifier(0);
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -69,15 +63,16 @@ class _CalendarDrawerState extends State<CalendarDrawer> {
                       value.setCalenderIndex(2);
                       Navigator.of(context).pop();
                     },
-                    child: _items(context, Icons.view_week_outlined, "3 Day",
+                    child: _items(context, Icons.view_week_outlined, "Week",
                         Colors.black, null),
                   ),
                   InkWell(
                     onTap: () {
                       value.setCalenderIndex(3);
+
                       Navigator.of(context).pop();
                     },
-                    child: _items(context, Icons.view_week_outlined, "Week",
+                    child: _items(context, Icons.view_week_outlined, "Month",
                         Colors.black, null),
                   ),
                   Padding(

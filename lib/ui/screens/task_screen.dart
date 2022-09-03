@@ -7,7 +7,6 @@ import 'package:todo_reminder/ui/pages/all_task_pages/all_tasks.dart';
 import 'package:todo_reminder/ui/widgets/widgets.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/personal.dart';
 
-import '../screen_size.dart';
 import '../widgets/add_item/bottom_sheet.dart';
 
 class TaskScreens extends StatefulWidget {

@@ -7,8 +7,6 @@ class CustomListDialogbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
     return AlertDialog(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -37,7 +35,6 @@ class CustomListDialogbox extends StatelessWidget {
             color: Colors.grey.shade100,
             thickness: 2.h,
           ),
-          ListBox(iconclr: Colors.white, txt81: "Demo", txtsize: 15.sp),
         ],
       ),
     );

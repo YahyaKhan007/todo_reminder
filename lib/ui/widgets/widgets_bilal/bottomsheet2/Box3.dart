@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,9 +14,9 @@ class box3 extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return DottedBorder(
       color: Colors.grey,
-      dashPattern: [1, 3],
+      dashPattern: const [1, 3],
       borderType: BorderType.RRect,
-      radius: Radius.circular(3),
+      radius: const Radius.circular(3),
       strokeWidth: 2,
       child: Container(
         height: size.height * 0.0395,

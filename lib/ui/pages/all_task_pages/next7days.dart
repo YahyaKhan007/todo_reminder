@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo_reminder/ui/screen_size.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/expansiontile.dart';
 
 class Next7Days extends StatefulWidget {

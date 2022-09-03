@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:todo_reminder/ui/pratice_screens/weekCal.dart';
 
-class Day extends StatelessWidget {
-  const Day({Key? key}) : super(key: key);
+class MonthCalendarPage extends StatelessWidget {
+  const MonthCalendarPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Day extends StatelessWidget {
       // allowDragAndDrop: true,
       // allowAppointmentResize: true,
       // showNavigationArrow: true,
-      view: CalendarView.day,
+      view: CalendarView.month,
       // onTap: calendarTapped,
       // controller: _controller,
       dataSource: MeetingDataSource(getDataSource()),

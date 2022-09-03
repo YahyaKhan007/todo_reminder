@@ -25,13 +25,13 @@ class _CustomSwitchState extends State<CustomSwitch> {
       ),
       inactiveText: "",
       activeText: "",
-      inactiveColor: Colors.grey.shade300,
-      width: 55.0.w,
-      height: 28.0.h,
+      inactiveColor: Colors.grey.shade600,
+      width: 50.0.w,
+      height: 24.0.h,
       toggleSize: 28.0.h,
       value: status,
       borderRadius: 30.0.h,
-      padding: 1.0.w,
+      padding: 0.0.w,
       showOnOff: true,
       onToggle: (val) {
         setState(() {

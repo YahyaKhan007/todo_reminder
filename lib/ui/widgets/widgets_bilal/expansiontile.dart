@@ -78,7 +78,6 @@ class _CostomExpTileState extends State<CostomExpTile> {
   }
 
   void _showbottomsheet2(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     showModalBottomSheet(
         isScrollControlled: true,
         context: context,

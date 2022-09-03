@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/provider/calendar_provider.dart';
+import 'package:todo_reminder/ui/pratice_screens/weekCal.dart';
 import 'package:todo_reminder/ui/pratice_screens/day.dart';
 import 'package:todo_reminder/ui/pages/calendar_pages/agenda.dart';
 import 'package:todo_reminder/ui/screens/screens.dart';
 import 'package:todo_reminder/ui/widgets/event_task_adder.dart';
 import 'package:todo_reminder/ui/widgets/widgets.dart';
 
+import '../pages/calendar_pages/monthCal.dart';
 import '../widgets/custome_appbar/calendarAppBar.dart';
 
 class MainCalendar extends StatefulWidget {
@@ -21,8 +23,13 @@ class MainCalendar extends StatefulWidget {
 }
 
 class _MainCalendarState extends State<MainCalendar> {
-  List calendarPages = [Agenda(), const Day(), Container(), Container()];
-  List calendarPageTitles = ["Agenda", "Day", "3 Days", "Week"];
+  List calendarPages = [
+    const Agenda(),
+    const Day(),
+    const WeekCalendarPage(),
+    const MonthCalendarPage()
+  ];
+  List calendarPageTitles = ["Agenda", "Day", "Week", "Month"];
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +49,15 @@ class _MainCalendarState extends State<MainCalendar> {
           return calendarPages[value.calendarIndex];
         },
       ),
+      // body: const WeekCalendarPage(),
       floatingActionButton: ActionFloatingButton(
           color: Colors.blue.shade500,
           icon: Icons.add,
           iconColor: Colors.white,
           ontap: () {
-            EventOrTaskAdder.showButtons(context);
+            const EventOrTaskAdder().showButtons(context);
           },
-          radius: 25.r),
+          radius: 23.r),
     );
   }
 }

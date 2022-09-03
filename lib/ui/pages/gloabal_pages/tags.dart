@@ -3,6 +3,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_reminder/provider/tag_provider.dart';
+import 'package:todo_reminder/ui/pages/setting_pages/premium.dart';
+import 'package:todo_reminder/ui/screens/screens.dart';
+
+import '../../widgets/widgets_bilal/listview.dart';
 
 bool isCheck = false;
 
@@ -83,7 +89,7 @@ class _TagsState extends State<Tags> {
           "TAGS",
           style: TextStyle(
               fontSize: 19.sp,
-              letterSpacing: -0.5,
+              letterSpacing: 0,
               fontWeight: FontWeight.bold,
               color: Colors.blue),
         ),
@@ -101,15 +107,22 @@ class _TagsState extends State<Tags> {
       ),
       body: Column(
         children: [
-          TagOption(
-            color: priorityColor[0],
-            ontap: () {},
-            txt: priority[0],
-            custom_switch: _switch(context, isCheck: true, ontap: () {
-              setState(() {
-                con[0] = !con[0];
-              });
-            }),
+          Consumer<TagProvider>(
+            builder: (context, value, child) {
+              return TagOption(
+                color: priorityColor[0],
+                ontap: () {
+                  value.setTag("Priority");
+                  Navigator.of(context).pop();
+                },
+                txt: priority[0],
+                custom_switch: _switch(context, isCheck: false, ontap: () {
+                  // setState(() {
+                  //   con[0] = !con[0];
+                  // });
+                }),
+              );
+            },
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
@@ -161,22 +174,36 @@ class _TagsState extends State<Tags> {
                     return TagOption(
                         color: non_priorityColor[index],
                         ontap: () {
-                          setState(() {
-                            con[index] = !con[index];
-                            if (con[index] == true) {
-                              onTagClick(index);
-                              con[index] = !con[index];
-                            }
-                          });
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  child: const Premium(),
+                                  duration: const Duration(milliseconds: 700),
+                                  type: PageTransitionType.fade,
+                                  isIos: true));
+                          // setState(() {
+                          //   con[index] = !con[index];
+                          //   if (con[index] == true) {
+                          //     onTagClick(index);
+                          //     con[index] = !con[index];
+                          //   }
+                          // });
 
                           // setState(() {});
                         },
                         txt: non_priority[index],
                         custom_switch:
                             _switch(context, isCheck: con[index], ontap: () {
-                          setState(() {
-                            con[index] = !con[index];
-                          });
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  duration: const Duration(milliseconds: 700),
+                                  child: const Premium(),
+                                  type: PageTransitionType.fade,
+                                  isIos: true));
+                          // setState(() {
+                          //   con[index] = !con[index];
+                          // });
                         }));
                   }))
         ],
