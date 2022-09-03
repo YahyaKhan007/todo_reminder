@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_reminder/provider/add_grocery_condition.dart';
 import 'package:todo_reminder/provider/setting_buttons_provider.dart';
+import 'package:todo_reminder/provider/tag_provider.dart';
 import 'package:todo_reminder/provider/task_provider.dart';
+import 'package:todo_reminder/ui/pratice_screens/weekCal.dart';
 import 'package:todo_reminder/ui/screens/home_page.dart';
 import 'provider/calendar_provider.dart';
 
@@ -28,7 +30,8 @@ class MyApp extends StatelessWidget {
         ListenableProvider(create: (_) => CalendarProvider()),
         ListenableProvider(create: (_) => TaskProvider()),
         ListenableProvider(create: (_) => AddGrocerryProvider()),
-        ListenableProvider(create: (_) => SettingButtonsProvider())
+        ListenableProvider(create: (_) => SettingButtonsProvider()),
+        ListenableProvider(create: (_) => TagProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
