@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../screen_size.dart';
 import '../text.dart';
 
 class BottomButton extends StatelessWidget {

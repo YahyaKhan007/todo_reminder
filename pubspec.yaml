@@ -42,6 +42,12 @@ dependencies:
   page_transition: ^2.0.9
   flutter_screenutil: ^5.5.3+2
   syncfusion_flutter_calendar: ^20.2.46
+  firebase_auth: ^3.7.0
+  firebase_core: ^1.21.1
+  shared_preferences: ^2.0.15
+  flutter_spinkit: ^5.1.0
+  fluttertoast: ^8.0.9
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

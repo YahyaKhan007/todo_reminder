@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "827755432111",
+    "project_id": "todo-remind",
+    "storage_bucket": "todo-remind.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827755432111:android:ac22197e631db7e08aec5a",
+        "android_client_info": {
+          "package_name": "com.example.todo_reminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827755432111-8164338sbks5o65mrlb0j25bt2tar5m6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4-7lnebTdMPChxayT1gFS_LYxIKZP-rc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827755432111-8164338sbks5o65mrlb0j25bt2tar5m6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

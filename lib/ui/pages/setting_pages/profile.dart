@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo_reminder/ui/login_signup/login_signup.dart';
 import 'package:todo_reminder/ui/pages/setting_pages/premium.dart';
 
+import '../../../firebase_services/auth_login.dart';
 import '../../screens/screens.dart';
 import 'profile_photo.dart';
 
@@ -13,6 +15,8 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  final AuthLogin _auth = AuthLogin();
+
   var emailController = TextEditingController(text: "Yahya khan");
   var passController =
       TextEditingController(text: "Yahya.ali.barki@outlook.com");
@@ -235,9 +239,9 @@ class _ProfileState extends State<Profile> {
                       "REALLY?! ARE YOU SURE?",
                       "This action will permanantly delete all of your tasks and history. You can't undo this",
                       "CANCEL",
-                      "DELETE",
-                      () {},
-                      () {});
+                      "DELETE", onButton1: () {
+                    Navigator.of(context).pop();
+                  }, onButton2: () {});
                 }),
             ProfileOption(
                 text: "Restore Transactions",
@@ -248,7 +252,24 @@ class _ProfileState extends State<Profile> {
                 color: Colors.black87,
                 ontap: () {
                   _task(context, size, "SIGN OUT", "Sign out from  Any.do?",
-                      "No", "Yes", () {}, () {});
+                      "No", "Yes", onButton1: () async {
+                    print(_auth.currentuser!.email);
+                    Navigator.of(context).pop();
+                  }, onButton2: () async {
+                    CircularProgressIndicator(
+                      color: Colors.black,
+                      backgroundColor: Colors.grey.shade400,
+                    );
+                    _auth.signOut();
+                    Navigator.of(context).pop();
+                    Navigator.pushReplacement(
+                        context,
+                        PageTransition(
+                            duration: const Duration(milliseconds: 700),
+                            type: PageTransitionType.fade,
+                            child: const LoginSignup(),
+                            isIos: true));
+                  });
                 }),
           ],
         ),
@@ -336,16 +357,9 @@ class _ProfileState extends State<Profile> {
         });
   }
 
-  _task(
-    BuildContext context,
-    Size size,
-    String title,
-    String txt,
-    String button1,
-    String button2,
-    VoidCallback onButton1,
-    VoidCallback onButton2,
-  ) {
+  _task(BuildContext context, Size size, String title, String txt,
+      String button1, String button2,
+      {required VoidCallback onButton1, required VoidCallback onButton2}) {
     return showDialog(
       context: context,
       builder: (context) {
@@ -395,7 +409,7 @@ class _ProfileState extends State<Profile> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           TextButton(
-                              onPressed: () {},
+                              onPressed: onButton1,
                               child: Text(button1,
                                   style: TextStyle(
                                     letterSpacing: 0.4,
@@ -404,7 +418,7 @@ class _ProfileState extends State<Profile> {
                                     fontSize: 13.sp,
                                   ))),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: onButton2,
                               child: Text(button2,
                                   style: TextStyle(
                                     letterSpacing: 0.4,

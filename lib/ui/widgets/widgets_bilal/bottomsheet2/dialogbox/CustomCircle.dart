@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_reminder/ui/widgets/widgets_bilal/bottomsheet2/text.dart';
 
-import '../../../../screen_size.dart';
-
 class CustomCircle extends StatelessWidget {
   const CustomCircle({Key? key, required this.txt81, required this.icn})
       : super(key: key);
